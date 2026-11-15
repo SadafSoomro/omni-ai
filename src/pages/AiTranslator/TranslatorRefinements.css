@@ -1,0 +1,81 @@
+:root .app-layout .translator-container .translator-main-area {padding:24px;display:flex;flex-direction:column;align-items:center;overflow-y:auto;overflow-x:hidden;box-sizing:border-box}
+:root .app-layout .translator-container .translator-header {margin:auto 0 20px;flex-shrink:0;text-align:center;width:100%}
+:root .app-layout .translator-container .translator-eyebrow {display:inline-block;color:var(--ui-accent);font-size:10px;font-weight:600;letter-spacing:1.3px;margin-bottom:9px}
+:root .app-layout .translator-container .trans-title {font-size:clamp(25px,2.8vw,34px);line-height:1.2;letter-spacing:-1px;margin:0;color:var(--ui-text)!important;background:none!important;-webkit-text-fill-color:currentColor!important}
+:root .app-layout .translator-container .translator-subtitle {font-size:13px;line-height:1.6;color:var(--ui-muted);margin:8px 0 0}
+:root .app-layout .translator-container .trans-mode-tabs {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;max-width:540px;gap:5px;padding:5px;margin:0 0 20px;border:1px solid var(--ui-border);border-radius:15px;background:color-mix(in srgb,var(--ui-panel) 65%,transparent);box-sizing:border-box;flex-shrink:0}
+:root .app-layout .translator-container .mode-tab {display:flex;align-items:center;justify-content:center;gap:8px;padding:10px 8px;min-height:42px;background:transparent;border:1px solid transparent;border-radius:10px;color:var(--ui-muted);font-size:12px;font-weight:600;white-space:nowrap}
+:root .app-layout .translator-container .mode-tab.active {background:var(--ui-panel)!important;border-color:var(--ui-border);color:var(--ui-accent)!important;box-shadow:0 3px 12px #5c408e10}
+:root .app-layout .translator-container .mode-tab::after {display:none}
+:root .app-layout .translator-container .trans-main-card {width:100%;max-width:960px;padding:22px;margin:0 0 auto;border:1px solid var(--ui-border);border-radius:22px;background:var(--ui-panel)!important;box-shadow:0 16px 50px #61477e0a;box-sizing:border-box;flex-shrink:0;gap:0}
+:root .app-layout .translator-container .language-selector-bar {display:grid;grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr);gap:16px;align-items:center;padding:0 0 18px;margin:0 0 18px;background:transparent;border:0;border-bottom:1px solid var(--ui-border);border-radius:0}
+:root .app-layout .translator-container .lang-box {display:flex;flex-direction:column;align-items:stretch;gap:7px;min-width:0}
+:root .app-layout .translator-container .lang-box-label {color:var(--ui-muted);font-size:11px;line-height:1.4;font-weight:500;text-transform:none;letter-spacing:0}
+:root .app-layout .translator-container .lang-select {width:100%;padding:10px 12px;min-height:40px;border:1px solid var(--ui-border);border-radius:10px;background:var(--ui-bg);color:var(--ui-text);font-size:13px;box-sizing:border-box;min-width:0}
+:root .app-layout .translator-container .btn-swap-langs {align-self:end;margin-bottom:1px;width:38px;height:38px;border:1px solid var(--ui-border);background:color-mix(in srgb,var(--ui-accent) 8%,var(--ui-panel));color:var(--ui-accent);border-radius:50%;font-size:22px;display:grid;place-items:center;cursor:pointer}
+:root .app-layout .translator-container .trans-boxes-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0}
+:root .app-layout .translator-container .trans-panel {display:flex;flex-direction:column;min-width:0;min-height:235px;padding:16px;border:1px solid var(--ui-border);border-radius:15px;background:var(--ui-panel)!important;box-shadow:none;box-sizing:border-box}
+:root .app-layout .translator-container .target-panel {background:color-mix(in srgb,var(--ui-accent) 3%,var(--ui-panel))!important}
+:root .app-layout .translator-container .panel-top {display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px;min-height:24px}
+:root .app-layout .translator-container .panel-title {font-size:12px;color:var(--ui-text);font-weight:600}
+:root .app-layout .translator-container .translator-result-tag {font-size:10px;color:var(--ui-accent);padding:3px 7px;border-radius:6px;background:color-mix(in srgb,var(--ui-accent) 8%,var(--ui-panel))}
+:root .app-layout .translator-container .trans-textarea {width:100%;height:135px;min-height:100px;max-height:300px;flex:1;resize:vertical;padding:0;border:0!important;outline:none;background:transparent!important;font-family:inherit;font-size:14px;line-height:1.8;color:var(--ui-text)!important;box-sizing:border-box}
+:root .app-layout .translator-container .trans-textarea::placeholder {color:var(--ui-muted);opacity:.65;font-size:13px}
+:root .app-layout .translator-container .target-text-display {min-height:100px;max-height:300px;flex:1;overflow:auto;font-size:14px;line-height:1.8;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ui-text);padding:0}
+:root .app-layout .translator-container .translated-result-text {margin:0;color:var(--ui-text);line-height:1.8;white-space:pre-wrap}
+:root .app-layout .translator-container .target-placeholder {color:var(--ui-muted);opacity:.65;font-size:13px}
+:root .app-layout .translator-container .panel-bottom-tools {display:flex;align-items:center;justify-content:space-between;gap:8px;padding:12px 0 0;margin-top:10px;min-height:30px;border-top:1px solid color-mix(in srgb,var(--ui-border) 65%,transparent)}
+:root .app-layout .translator-container :is(.btn-tts,.btn-copy,.btn-panel-action,.translator-upload-audio) {display:inline-flex;align-items:center;justify-content:center;padding:6px 10px;min-height:30px;border:1px solid var(--ui-border);border-radius:8px;background:var(--ui-panel)!important;color:var(--ui-accent)!important;font-size:11px;line-height:1.4;cursor:pointer;white-space:nowrap}
+:root .app-layout .translator-container .btn-panel-action {border-color:transparent;background:transparent!important}
+:root .app-layout .translator-container .target-action-btns {display:flex;gap:8px;flex-wrap:wrap}
+:root .app-layout .translator-container .char-count {margin-left:auto;font-size:10px;color:var(--ui-muted)}
+:root .app-layout .translator-container .trans-action-footer {display:flex;align-items:center;justify-content:space-between;gap:16px;margin:18px 0 0;padding:0}
+:root .app-layout .translator-container .translator-footer-note {font-size:11px;color:var(--ui-muted);line-height:1.5}
+:root .app-layout .translator-container :is(.btn-translate-now,.translator-small-primary) {display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:40px;padding:10px 18px;border:1px solid var(--ui-accent);border-radius:10px;background:var(--ui-accent)!important;color:#fff!important;font-size:12px;font-weight:600;box-shadow:0 4px 14px #714fb51b;white-space:nowrap;cursor:pointer}
+:root .app-layout .translator-container .btn-translate-now {min-width:155px}
+:root .app-layout .translator-container :is(.btn-translate-now,.translator-small-primary) span {color:inherit!important;-webkit-text-fill-color:currentColor!important}
+:root .app-layout .translator-container :is(.translator-voice-card,.translator-image-card) {display:flex;align-items:center;gap:14px;padding:16px;margin-bottom:18px;border:1px solid var(--ui-border);border-radius:14px;background:color-mix(in srgb,var(--ui-accent) 4%,var(--ui-panel));box-sizing:border-box}
+:root .app-layout .translator-container .translator-mode-icon {display:grid;place-items:center;flex-shrink:0;width:46px;height:46px;border:1px solid var(--ui-border);border-radius:13px;background:var(--ui-panel);color:var(--ui-accent);overflow:hidden}
+:root .app-layout .translator-container .translator-mode-icon img {width:100%;height:100%;object-fit:cover}
+:root .app-layout .translator-container .translator-mode-copy {flex:1;min-width:0}
+:root .app-layout .translator-container .translator-mode-copy h2 {font-size:13px;font-weight:600;color:var(--ui-text);margin:0 0 5px}
+:root .app-layout .translator-container .translator-mode-copy p {font-size:11px;color:var(--ui-muted);line-height:1.6;margin:0}
+:root .app-layout .translator-container .translator-voice-actions {display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+:root .app-layout .translator-container .recording .translator-mode-icon {color:#d74765;animation:translator-record-pulse 1.2s ease-in-out infinite}
+:root .app-layout .translator-container .translator-error {padding:10px 12px;margin:0 0 16px;border:1px solid #dd527d40;border-radius:10px;background:#e1597809;color:#be3f60;font-size:12px;line-height:1.6;overflow-wrap:anywhere}
+:root .app-layout .translator-container button:disabled {opacity:.45;cursor:not-allowed;transform:none}
+:root .app-layout .translator-container :is(button,select,textarea):focus-visible {outline:2px solid var(--ui-accent);outline-offset:3px}
+@keyframes translator-record-pulse {50%{box-shadow:0 0 0 7px #d7476515}}
+@media(max-width:900px) {
+ :root .app-layout .translator-container .translator-main-area {padding:20px 16px}
+ :root .app-layout .translator-container .translator-voice-card {flex-wrap:wrap}
+ :root .app-layout .translator-container .translator-voice-actions {width:100%;justify-content:flex-end}
+}
+@media(max-width:600px) {
+ :root .app-layout .translator-container .translator-main-area {padding:20px 12px}
+ :root .app-layout .translator-container .translator-header {margin-top:0;margin-bottom:16px}
+ :root .app-layout .translator-container .trans-main-card {padding:14px;border-radius:18px}
+ :root .app-layout .translator-container .trans-mode-tabs {margin-bottom:16px}
+ :root .app-layout .translator-container .mode-tab {gap:5px;font-size:10px;padding:8px 3px}
+ :root .app-layout .translator-container .mode-tab svg {width:16px;height:16px}
+ :root .app-layout .translator-container .language-selector-bar {gap:8px;grid-template-columns:minmax(0,1fr) 30px minmax(0,1fr);padding-bottom:14px;margin-bottom:14px}
+ :root .app-layout .translator-container .lang-select {padding:9px 5px;font-size:11px}
+ :root .app-layout .translator-container .btn-swap-langs {width:30px;height:36px;font-size:20px}
+ :root .app-layout .translator-container .trans-boxes-grid {grid-template-columns:1fr;gap:12px}
+ :root .app-layout .translator-container .trans-panel {min-height:175px;padding:12px}
+ :root .app-layout .translator-container .trans-textarea {min-height:75px;height:90px;max-height:220px;font-size:16px}
+ :root .app-layout .translator-container .target-text-display {min-height:75px;max-height:220px}
+ :root .app-layout .translator-container .trans-action-footer {flex-direction:column-reverse;align-items:stretch;gap:10px;margin-top:14px}
+ :root .app-layout .translator-container .translator-footer-note {text-align:center;font-size:10px}
+ :root .app-layout .translator-container :is(.translator-voice-card,.translator-image-card) {padding:12px;gap:10px;flex-wrap:wrap}
+ :root .app-layout .translator-container .translator-image-card > .translator-small-primary {width:100%}
+ :root .app-layout .translator-container .translator-voice-actions {justify-content:stretch}
+ :root .app-layout .translator-container .translator-voice-actions > button {flex:1}
+}
+@media(prefers-reduced-motion:reduce) {:root .app-layout .translator-container .recording .translator-mode-icon {animation:none}}
+
+:root .app-layout .translator-container .trans-mode-tabs {border:1px solid var(--ui-border)!important;background:color-mix(in srgb,var(--ui-panel) 70%,transparent)!important;box-shadow:none!important}
+:root .app-layout .translator-container .mode-tab {background:transparent!important;border:1px solid transparent!important;box-shadow:none!important}
+:root .app-layout .translator-container .mode-tab.active {background:var(--ui-panel)!important;border:1px solid var(--ui-border)!important;box-shadow:0 3px 10px #654a8912!important}
+:root .app-layout .translator-container .language-selector-bar {background:transparent!important;border:0!important;border-bottom:1px solid var(--ui-border)!important}
+:root .app-layout .translator-container .lang-box-label {color:var(--ui-muted)!important;-webkit-text-fill-color:currentColor!important}

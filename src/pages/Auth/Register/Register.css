@@ -1,0 +1,135 @@
+/* ===== REGISTER SPECIFIC CSS ===== */
+
+/* Two-column row for Name + Phone */
+:where(.auth-page) .reg-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* ── Image Upload ── */
+:where(.auth-page) .image-upload-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 4px;
+}
+
+:where(.auth-page) .image-upload-circle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  border: 2px dashed rgba(108, 99, 255, 0.4);
+  background: rgba(108, 99, 255, 0.06);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+:where(.auth-page) .image-upload-circle:hover {
+  border-color: rgba(108, 99, 255, 0.8);
+  background: rgba(108, 99, 255, 0.12);
+  box-shadow: 0 0 16px rgba(108, 99, 255, 0.2);
+}
+
+:where(.auth-page) .image-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+:where(.auth-page) .image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+:where(.auth-page) .image-placeholder span {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #6C63FF;
+  letter-spacing: 0.3px;
+}
+
+/* Hover overlay on circle */
+:where(.auth-page) .image-upload-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(108, 99, 255, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: 50%;
+}
+
+:where(.auth-page) .image-upload-circle:hover .image-upload-overlay {
+  opacity: 1;
+}
+
+/* Action buttons below circle */
+:where(.auth-page) .image-upload-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+:where(.auth-page) .img-btn-choose {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #a78bfa;
+  background: rgba(108, 99, 255, 0.1);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-radius: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+:where(.auth-page) .img-btn-choose:hover {
+  background: rgba(108, 99, 255, 0.2);
+  border-color: rgba(108, 99, 255, 0.5);
+}
+
+:where(.auth-page) .img-btn-remove {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.08);
+  border: 1px solid rgba(248, 113, 113, 0.2);
+  border-radius: 6px;
+  padding: 5px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+:where(.auth-page) .img-btn-remove:hover {
+  background: rgba(248, 113, 113, 0.16);
+  border-color: rgba(248, 113, 113, 0.4);
+}
+
+/* Responsive: stack on mobile screens */
+@media (max-width: 480px) {
+  :where(.auth-page) .reg-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 481px) and (max-height: 800px) {
+  :where(.auth-page) .image-upload-group { flex-direction: row; justify-content: center; gap: 14px; }
+  :where(.auth-page) .image-upload-circle { width: 52px; height: 52px; }
+}

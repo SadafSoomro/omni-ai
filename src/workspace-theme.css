@@ -1,0 +1,265 @@
+/* Shared workspace palette; generated documents and slides keep their own colors. */
+.pwa-settings{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;margin-top:32px;padding-top:24px;border-top:1px solid var(--ui-border)}.pwa-settings h2{font-size:18px;margin-bottom:6px}.pwa-settings p{color:var(--ui-muted);font-size:13px;line-height:1.8}.pwa-settings>p{flex-basis:100%}
+.tool-access-locked { margin:64px 0 0 var(--sidebar-width,260px); width:calc(100% - var(--sidebar-width,260px)); min-height:calc(100dvh - 64px); display:grid; place-items:center; padding:32px 20px; background:var(--workspace-wash),var(--ui-bg); color:var(--ui-text); text-align:center; }
+.tool-access-locked>div { max-width:460px; }.tool-access-locked h1{font-size:clamp(22px,3vw,30px);line-height:1.4;letter-spacing:-.6px;margin-bottom:12px}.tool-access-locked p{font-size:14px;line-height:1.8;color:var(--ui-muted);margin-bottom:24px}.tool-access-locked button{background:var(--ui-accent);color:var(--ui-panel);padding:12px 20px;border:0;border-radius:12px;min-height:44px;font-weight:600;cursor:pointer}
+@media (max-width: 900px) {
+  :root .app-layout .aifile-upload-hero-container { margin-block: auto; padding: 32px 16px; flex-shrink: 0; justify-content: center; }
+}
+:root .cv-page .quick-skills-panel { background: var(--ui-bg) !important; border: 1px solid var(--ui-border); border-radius: 14px; padding: 16px; gap: 12px; }
+:root .cv-page .quick-skills-title { color: var(--ui-muted) !important; font-size: 12px; text-transform: none; font-weight: 600; }
+:root .cv-page .skill-category-chips { gap: 8px; }
+:root .cv-page .quick-skill-tag { background: var(--ui-panel) !important; border: 1px solid var(--ui-border) !important; color: var(--ui-accent) !important; font-size: 12px; line-height: 1.4; padding: 8px 11px; border-radius: 9px; min-height: 34px; }
+:root .cv-page .quick-skill-tag:hover { background: #a78bfa1a !important; border-color: var(--ui-accent) !important; }
+@media (max-width: 600px) { :root .cv-page .quick-skill-tag { min-height: 44px; } }
+:root .app-layout .cv-page { padding: 32px 28px 64px; gap: 20px; }
+:root .cv-page .cv-header { max-width: 780px; margin: 0; padding: 8px 0 4px; }
+.cv-studio-subtitle { color: var(--ui-muted); font-size: 13px; line-height: 1.8; margin-top: 10px; }
+:root .cv-page .cv-header .converter-badge { display: inline-flex; width: auto; border: 1px solid var(--ui-border); border-radius: 30px; padding: 4px 12px; margin-bottom: 8px; background: #a78bfa10 !important; }
+:root .cv-page .btn-upload-photo { color: var(--ui-accent) !important; background: #a78bfa12 !important; border: 1px solid var(--ui-border); border-radius: 8px; min-height: 36px; padding: 8px 10px; }
+:root .cv-page .cv-color-scroll { padding: 7px; }
+:root .cv-page .cv-controls-wrapper { max-width: 1340px; gap: 0; border: 1px solid var(--ui-border); border-radius: 20px; background: var(--ui-panel); overflow: hidden; box-shadow: var(--workspace-shadow); }
+:root .cv-page .cv-design-bar { background: transparent !important; border: 0 !important; border-radius: 0; box-shadow: none; padding: 18px 20px; flex-wrap: wrap; }
+:root .cv-page .cv-bar-label { font-size: 11px; letter-spacing: .2px; font-weight: 600; text-transform: none; color: var(--ui-muted) !important; }
+:root .cv-page .cv-tpl-scroll { gap: 6px; padding: 4px 2px 8px; scrollbar-width: thin; }
+:root .cv-page .cv-tpl-btn { min-height: 40px; padding: 9px 12px; border-radius: 10px; border: 1px solid transparent; background: transparent !important; color: var(--ui-muted) !important; font-size: 12px; }
+:root .cv-page .cv-tpl-btn.active { background: #a78bfa15 !important; border-color: #a78bfa40 !important; color: var(--ui-accent) !important; box-shadow: none; }
+:root .cv-page .color-swatch-btn { width: 25px; height: 25px; border: 3px solid var(--ui-panel); box-shadow: 0 0 0 1px var(--ui-border); }
+:root .cv-page .color-swatch-btn.active { outline: 2px solid var(--ui-accent); outline-offset: 3px; }
+:root .cv-page .cv-action-bar { border-top: 1px solid var(--ui-border); padding: 14px 20px; margin: 0; gap: 12px; background: #a78bfa04; }
+:root .cv-page .cv-action-left { gap: 10px; min-width: 0; }
+:root .cv-page .cv-action-btn { min-height: 42px; border-radius: 11px; padding: 10px 16px; font-size: 12px; }
+:root .cv-page .cv-action-btn.clear { background: transparent !important; border-color: var(--ui-border) !important; color: var(--ui-muted) !important; }
+:root .cv-page .cv-import-button { background: linear-gradient(120deg,#8460da,#a076e8) !important; color: white !important; border-color: transparent; box-shadow: 0 4px 12px #8460da20; }
+:root .cv-page .cv-import-status { width: 100%; max-width: 1340px; border: 0; padding: 0 6px; font-size: 12px; }
+:root .cv-page .cv-import-review { max-width: none; padding: 20px; border: 1px solid var(--ui-border); border-radius: 16px; background: var(--ui-panel); }
+:root .cv-page .cv-workspace { gap: 24px; grid-template-columns: minmax(430px,46%) minmax(0,1fr); }
+:root .cv-page .cv-document :is(h1,h2,h3,h4,p,li,strong,span) { cursor: pointer; }
+:root .cv-page .cv-field-grid { grid-template-columns: minmax(0,1fr); }
+:root .cv-page .cv-form-panel { border: 1px solid var(--ui-border) !important; border-radius: 18px; background: var(--ui-panel) !important; box-shadow: var(--workspace-shadow); }
+:root .cv-page .cv-section-navigation { padding: 10px; background: transparent; }
+:root .cv-page .cv-tab { min-height: 38px; border-radius: 9px; font-size: 12px; }
+:root .cv-page .cv-form-body { padding: 22px; }
+:root .cv-page .cv-field label { color: var(--ui-muted) !important; font-size: 11px; font-weight: 600; text-transform: none; letter-spacing: .1px; }
+:root .cv-page .cv-field :is(input,textarea,select) { border: 1px solid var(--ui-border) !important; border-radius: 10px; padding: 12px; background: var(--ui-bg) !important; color: var(--ui-text) !important; }
+:root .cv-page .photo-upload-row { background: #a78bfa07 !important; border: 0 !important; border-radius: 14px; padding: 16px; }
+:root .cv-page .mobile-view-switcher { border-radius: 13px; background: var(--ui-panel) !important; border-color: var(--ui-border) !important; }
+@media (max-width: 1100px) {
+  :root .cv-page .cv-workspace { grid-template-columns: minmax(0,1fr); }
+  :root .cv-page .cv-form-panel { max-width: 760px; }
+}
+@media (max-width: 600px) {
+  :root .app-layout .cv-page { padding: 20px 14px 40px; gap: 16px; }
+  :root .cv-page .cv-header { padding-top: 0; }
+  :root .cv-page .cv-header .converter-title { font-size: 27px; }
+  .cv-studio-subtitle { font-size: 12px; margin-top: 8px; }
+  :root .cv-page .cv-design-bar { padding: 14px; gap: 14px; }
+  :root .cv-page .cv-design-row { gap: 12px; }
+  :root .cv-page .cv-action-bar { padding: 12px 14px; flex-direction: row; }
+  :root .cv-page .cv-action-left { display: grid; grid-template-columns: minmax(0,1fr) auto; width: 100%; gap: 8px; }
+  :root .cv-page .cv-action-right { display: none; }
+  :root .cv-page .cv-action-btn { padding: 10px 12px; min-height: 44px; }
+  :root .cv-page .cv-form-body { padding: 16px; }
+  :root .cv-page .cv-field :is(input,textarea,select) { font-size: 16px; }
+  :root .cv-page .mobile-view-btn { min-height: 44px; }
+  :root .cv-page .cv-import-review { padding: 16px; }
+}
+.cv-import-status { flex-shrink: 0; padding: 12px 24px; border-bottom: 1px solid var(--ui-border); color: var(--ui-muted); font-size: 12px; line-height: 1.7; }
+.cv-import-status .cv-import-error { color: #bf3654; }
+.cv-import-review { max-width: 1000px; margin: auto; display: grid; gap: 12px; }
+.cv-import-review h2 { color: var(--ui-text); font-size: 17px; }
+.cv-import-review dl { display: flex; gap: 24px; flex-wrap: wrap; }
+.cv-import-review dt { font-size: 11px; }
+.cv-import-review dd { color: var(--ui-text); font-weight: 500; overflow-wrap: anywhere; }
+.cv-import-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.app-layout .cv-import-button { background: #8b5cf619 !important; color: var(--ui-accent) !important; border: 1px solid var(--ui-border); min-height: 40px; }
+.app-layout .cv-import-button:disabled { opacity: .6; cursor: wait; }
+@media (max-width: 600px) { .cv-import-status { padding: 12px 16px; }.cv-import-review dl { flex-direction: column; gap: 8px; }.app-layout .cv-action-left { flex-wrap: wrap; }.app-layout .cv-import-button { min-height: 44px; } }
+.page-loading { margin: 64px 0 0 var(--sidebar-width,260px); width: calc(100% - var(--sidebar-width,260px)); min-height: calc(100dvh - 64px); display: flex; align-items: center; justify-content: center; gap: 12px; padding: 24px; background: var(--workspace-wash), var(--ui-bg); color: var(--ui-muted); font-size: 14px; }
+.page-loading-mark { width: 22px; height: 22px; border: 2px solid var(--ui-border); border-top-color: var(--ui-accent); border-radius: 50%; animation: workspace-spin .8s linear infinite; flex-shrink: 0; }
+.auth-standalone > .page-loading { position: fixed; inset: 0; margin: 0; width: 100%; z-index: 1; }
+@keyframes workspace-spin { to { transform: rotate(360deg); } }
+:root {
+  --ui-bg: #12101c;
+  --ui-panel: #1b1828;
+  --ui-border: #b7a2ee24;
+  --ui-text: #f1edf9;
+  --ui-muted: #b2a8c5;
+  --ui-accent: #ba9bff;
+  --color-primary: #a78bfa;
+  --color-bg: var(--ui-bg);
+  --color-surface: var(--ui-panel);
+  --color-border: var(--ui-border);
+  --color-text: var(--ui-text);
+  --color-text-muted: var(--ui-muted);
+  --workspace-shadow: 0 8px 30px #07031130;
+  --workspace-wash: radial-gradient(ellipse at 5% 0%, #a78bfa12, transparent 48%), radial-gradient(ellipse at 95% 90%, #5cbfb90a, transparent 45%);
+}
+:root[data-theme="light"], body[data-theme="light"] {
+  --ui-bg: #f8f7fc;
+  --ui-panel: #ffffff;
+  --ui-border: #e8e1f3;
+  --ui-text: #302743;
+  --ui-muted: #776c88;
+  --ui-accent: #7951c6;
+  --color-primary: #7951c6;
+  --color-bg: var(--ui-bg);
+  --color-surface: var(--ui-panel);
+  --color-border: var(--ui-border);
+  --color-text: var(--ui-text);
+  --color-text-muted: var(--ui-muted);
+  --workspace-shadow: 0 8px 30px #57407708, 0 1px 3px #57407704;
+  --workspace-wash: radial-gradient(ellipse at 5% 0%, #e8ddfa88, transparent 48%), radial-gradient(ellipse at 95% 90%, #dff3ef66, transparent 45%);
+}
+.app-layout > :is(.home-content,.aichat-container,.aifile-page-wrapper,.aivoice-root,.converter-container,.aipres-container,.camscan-container,.translator-container,.easy-career-page,.cv-page,.subscription-page,.edit-profile-container,.account-page) {
+  background-color: var(--ui-bg) !important;
+  background-image: var(--workspace-wash) !important;
+  background-size: 100% 100% !important;
+  background-repeat: no-repeat !important;
+  color: var(--ui-text);
+}
+.app-layout .navbar {
+  background: var(--ui-panel) !important;
+  border-bottom: 1px solid var(--ui-border) !important;
+  box-shadow: 0 3px 20px #4b356907 !important;
+}
+.app-layout .sidebar {
+  background: var(--ui-panel) !important;
+  border-right: 1px solid var(--ui-border) !important;
+  box-shadow: none !important;
+}
+.app-layout .sidebar-inner { padding: 24px 14px 32px; }
+.app-layout .sidebar-heading { color: var(--ui-muted) !important; font-size: 10px; letter-spacing: 1.3px; }
+.app-layout .sidebar-link { border-radius: 12px; color: var(--ui-muted) !important; transition: background .18s, color .18s; }
+.app-layout .sidebar-link:hover { background: #a78bfa10 !important; color: var(--ui-accent) !important; }
+.app-layout .sidebar-link.active { background: linear-gradient(110deg, #9d7ce924, #a78bfa0c) !important; border-color: #a78bfa30 !important; color: var(--ui-accent) !important; box-shadow: none !important; }
+.app-layout .sidebar-link.active .sidebar-link-icon { color: var(--ui-accent) !important; }
+.app-layout :is(.overview-tool-card,.overview-shortcuts > a,.converter-card,.simple-fsc-card,.camscan-action-card,.page-card,.trans-main-card,.simple-card,.easy-card,.edit-profile-card,.plan-card,.account-card,.settings-option) {
+  border: 1px solid var(--ui-border);
+  border-radius: 20px;
+  background: var(--ui-panel) !important;
+  box-shadow: var(--workspace-shadow) !important;
+}
+.app-layout :is(.overview-tool-card,.overview-shortcuts > a,.settings-option) { transition: transform .2s, box-shadow .2s, border-color .2s; }
+.app-layout :is(.overview-tool-card,.overview-shortcuts > a,.settings-option):hover { transform: translateY(-3px); border-color: #b59adf !important; box-shadow: 0 12px 30px #7951c614 !important; }
+.app-layout :is(.btn-open-camera,.btn-convert-pdf,.btn-convert,.btn-translate-now,.btn-generate,.btn-convert-file,.btn-edit-save,.account-button:not(.secondary)) {
+  background: linear-gradient(120deg, #8460da, #a076e8) !important;
+  color: #fff !important;
+  border-radius: 12px;
+  box-shadow: 0 5px 14px #8460da24 !important;
+}
+.app-layout :is(.btn-open-camera,.btn-convert-pdf,.btn-convert,.btn-translate-now,.btn-generate,.btn-convert-file,.btn-edit-save) span { color: #fff !important; -webkit-text-fill-color: #fff !important; }
+.app-layout :is(.converter-dropzone,.simple-dropzone,.easy-dropzone,.ocr-dropzone,.file-dropzone,.empty-scan-state) { background: #a78bfa07 !important; border-color: #b8a1df66 !important; border-radius: 20px; }
+.app-layout .aichat-main { --chat-text: var(--ui-text); --chat-muted: var(--ui-muted); background: transparent !important; }
+.app-layout .aichat-topbar { background: var(--ui-panel) !important; border-bottom-color: var(--ui-border) !important; }
+.app-layout .input-box-wrapper { background: var(--ui-panel) !important; border: 1px solid var(--ui-border) !important; box-shadow: 0 8px 36px #7951c610 !important; border-radius: 22px; }
+.app-layout .input-box-wrapper:focus-within { border-color: #b59adf !important; box-shadow: 0 0 0 3px #a78bfa12 !important; }
+.app-layout .chat-textarea { border: 0 !important; background: transparent !important; color: var(--ui-text) !important; outline: none; }
+.app-layout .settings-option-icon { background: linear-gradient(135deg, #a78bfa20, #68c9c412); }
+.app-layout :is(.account-header h1,.settings-option-copy strong,.overview-tool-card h3) { color: var(--ui-text) !important; letter-spacing: -.4px; }
+::selection { background: #a78bfa40; }
+/* Full-size aurora washes replace the old tiled square backgrounds. */
+:root .app-layout .converter-container { padding: 0 !important; }
+:root .app-layout .converter-main-area { width: 100%; flex: 1; padding: 40px 24px; display: flex; flex-direction: column; align-items: center; overflow-y: auto; }
+:root .app-layout .converter-main-area > .converter-mode-switcher { margin: auto 0 24px !important; flex-shrink: 0; }
+:root .app-layout .converter-main-area > .converter-header { width: 100%; max-width: 780px; min-height: 140px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; margin: 0 0 24px !important; text-align: center; }
+:root .app-layout .converter-header :is(.converter-title,.converter-subtitle) { margin: 0; }
+:root .app-layout .converter-main-area > :last-child { margin-bottom: auto !important; }
+:root .app-layout .converter-main-area > :is(.converter-card,.simple-fsc-card) { width: 100%; max-width: 780px; padding: 28px; margin-inline: auto !important; flex-shrink: 0; }
+:root .app-layout .converter-main-area :is(.converter-dropzone,.simple-dropzone) { width: 100%; min-height: 240px; padding: 32px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; }
+@media (max-width: 600px) {
+  :root .app-layout .converter-main-area { padding: 28px 16px; }
+  :root .app-layout .converter-main-area > :is(.converter-card,.simple-fsc-card) { padding: 18px; }
+  :root .app-layout .converter-main-area :is(.converter-dropzone,.simple-dropzone) { min-height: 260px; padding: 28px 14px; }
+  :root .app-layout .converter-main-area > .converter-header { min-height: 180px; }
+  :root .app-layout .converter-main-area > .converter-mode-switcher { width: 100%; justify-content: center; gap: 10px; }
+  :root .app-layout .converter-main-area .mode-toggle-btn { font-size: 12px; }
+}
+:root { --workspace-wash: radial-gradient(ellipse 65% 55% at 0% 10%, #9570df24, transparent 75%), radial-gradient(ellipse 55% 65% at 100% 85%, #46b5ad14, transparent 75%), radial-gradient(ellipse 45% 35% at 65% 0%, #d38ab70c, transparent 80%); }
+:root[data-theme="light"], body[data-theme="light"] {
+  --ui-bg: #f8f6fc;
+  --workspace-wash: radial-gradient(ellipse 75% 65% at 0% 10%, #d6b9f5b3, transparent 75%), radial-gradient(ellipse 65% 75% at 100% 85%, #b6e7dba6, transparent 75%), radial-gradient(ellipse 55% 50% at 75% 0%, #f3cddd8c, transparent 80%);
+}
+:root .app-layout > :is(.home-content,.aichat-container,.aifile-page-wrapper,.aivoice-root,.converter-container,.aipres-container,.camscan-container,.translator-container,.easy-career-page,.cv-page,.subscription-page,.edit-profile-container,.account-page) {
+  background-color: var(--ui-bg) !important;
+  background-image: var(--workspace-wash) !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+:root .app-layout :is(.aichat-main,.aifile-chat-screen,.aifile-upload-hero-container,.aifile-messages-box,.voice-body,.voice-main,.converter-main-area,.camscan-main-area,.translator-main-area) {
+  background: transparent !important;
+}
+/* Lighter surfaces and compact controls give the workspace more breathing room. */
+:root .app-layout :is(.converter-card,.simple-fsc-card,.camscan-action-card,.trans-main-card,.simple-card,.easy-card,.edit-profile-card,.account-card) {
+  border-color: color-mix(in srgb, var(--ui-border) 65%, transparent) !important;
+  background: color-mix(in srgb, var(--ui-panel) 88%, transparent) !important;
+  box-shadow: 0 12px 40px #47326007 !important;
+}
+:root .app-layout :is(.converter-title,.camscan-title,.trans-title,.aipres-title,.sub-title,.aifile-hero-title) { letter-spacing: -1.2px; line-height: 1.25; }
+:root .app-layout :is(.converter-mode-switcher,.trans-mode-tabs,.voice-mode-tabs) {
+  background: transparent !important;
+  border: 0 !important;
+  border-bottom: 1px solid var(--ui-border) !important;
+  border-radius: 0;
+  box-shadow: none !important;
+  gap: 18px;
+}
+:root .app-layout :is(.mode-toggle-btn,.trans-mode-tabs .mode-tab,.voice-mode-tabs .mode-tab) {
+  border: 0 !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 0;
+  background: transparent !important;
+  padding: 12px 4px;
+}
+:root .app-layout :is(.mode-toggle-btn.active,.trans-mode-tabs .mode-tab.active,.voice-mode-tabs .mode-tab.active) {
+  background: transparent !important;
+  border-bottom-color: var(--ui-accent) !important;
+  color: var(--ui-accent) !important;
+  box-shadow: none !important;
+}
+:root .app-layout .settings-options { gap: 0; }
+:root .app-layout .settings-option {
+  padding: 26px 10px;
+  background: transparent !important;
+  border: 0;
+  border-bottom: 1px solid var(--ui-border);
+  border-radius: 0;
+  box-shadow: none !important;
+}
+:root .app-layout .settings-option:hover { background: #a78bfa08 !important; transform: none; box-shadow: none !important; }
+:root .app-layout .settings-option-icon { border-radius: 50%; }
+:root .app-layout :is(.overview-tool-icon,.aifile-dropzone-icon,.empty-icon-wrap) { border-radius: 50%; }
+:root .app-layout .empty-scan-state { background: transparent !important; border-color: var(--ui-border) !important; border-style: solid; box-shadow: none !important; max-width: 700px; min-height: 240px; padding: 44px 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+@media (max-width: 600px) {
+  :root .app-layout :is(.converter-mode-switcher,.trans-mode-tabs,.voice-mode-tabs) { gap: 8px; }
+  :root .app-layout .settings-option { padding: 20px 4px; }
+}
+@media (max-width: 900px) {
+  .app-layout .sidebar { width: min(290px, 86vw); height: calc(100dvh - 64px); padding-bottom: env(safe-area-inset-bottom); }
+  .app-layout .sidebar-link { min-height: 44px; }
+  .app-layout .sidebar-close-btn { min-width: 44px; min-height: 44px; }
+}
+@media (max-width: 600px) {
+  :root .app-layout > .account-page { margin-inline-start: 0; width: 100%; padding: 24px 16px; }
+  .app-layout .account-header { align-items: flex-start; flex-direction: column; gap: 16px; }
+  .app-layout :is(.account-support-grid,.account-stats) { grid-template-columns: minmax(0,1fr); }
+  .app-layout .account-card { padding: 20px 16px; }
+  .app-layout :is(.converter-main-area,.camscan-main-area,.translator-main-area) { padding: 24px 16px max(24px,env(safe-area-inset-bottom)); }
+  .app-layout :is(.settings-option-copy,.account-header > div) { min-width: 0; overflow-wrap: anywhere; }
+  .app-layout :is(.navbar-hamburger-btn,.navbar-theme-btn,.profile-btn,.btn-voice-input,.btn-send-message,.cv-tabs-arrow) { min-width: 44px; min-height: 44px; }
+  .app-layout :is(.btn-open-camera,.btn-upload-photos,.account-button,.billing-cycle-btn,.plan-btn) { min-height: 44px; }
+  .app-layout :is(.overview-search input,.chat-textarea,.trans-textarea,.voice-lang-select,.transcript-textarea,.account-form input,.account-form textarea,.account-form select,.cv-field input,.cv-field textarea) { font-size: 16px; }
+  .app-layout .aichat-input-area { padding-bottom: max(12px,env(safe-area-inset-bottom)); }
+  :root .app-layout .empty-scan-state { min-height: 210px; padding: 28px 18px; }
+  :root .app-layout .camscan-action-card { width: 100%; padding: 20px 16px; }
+  .app-layout .overview-filters { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 8px; scrollbar-width: thin; }
+  .app-layout .overview-filters button { flex-shrink: 0; min-height: 40px; }
+  .app-layout .overview-tool-card { min-width: 0; }
+  .app-layout .overview-tool-card h3 { overflow-wrap: anywhere; }
+  .app-layout .sub-modal { max-height: calc(100dvh - 32px); overflow-y: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-loading-mark { animation: none; }
+  .app-layout :is(.sidebar-link,.overview-tool-card,.overview-shortcuts > a,.settings-option) { transition: none; }
+  .app-layout :is(.overview-tool-card,.overview-shortcuts > a,.settings-option):hover { transform: none; }
+}

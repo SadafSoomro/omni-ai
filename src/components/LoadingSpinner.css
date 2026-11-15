@@ -1,0 +1,6 @@
+.loading-indicator {display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;min-width:24px;min-height:24px;color:var(--ui-accent,#7962e9)}
+.loading-indicator-ring {display:block;width:20px;height:20px;box-sizing:border-box;border:2px solid color-mix(in srgb,currentColor 22%,transparent);border-top-color:currentColor;border-radius:50%;animation:omni-loading-turn .8s linear infinite}
+button .loading-indicator {color:inherit}
+.loading-indicator.loading-block {display:flex;width:100%;padding:12px;box-sizing:border-box}
+@keyframes omni-loading-turn {to {transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce) {.loading-indicator-ring {animation-duration:2s}}

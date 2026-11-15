@@ -1,0 +1,10 @@
+.settings-page .account-wrap { max-width: 900px; }
+.settings-options { display: grid; gap: 14px; }
+.settings-option { display: flex; align-items: center; gap: 18px; padding: 24px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 16px; color: var(--color-text); text-decoration: none; transition: border-color .2s, background .2s; }
+.settings-option:hover { border-color: #a78bfa; background: #a78bfa0b; }
+.settings-option-icon { display: grid; place-items: center; flex-shrink: 0; width: 48px; height: 48px; border-radius: 14px; background: #8b5cf612; color: var(--color-primary); }
+.settings-option-copy { display: flex; flex-direction: column; gap: 6px; }
+.settings-option-copy strong { font-size: .95rem; font-weight: 600; }
+.settings-option-copy > span { font-size: .83rem; color: var(--color-text-muted); line-height: 1.6; }
+.settings-option-arrow { margin-left: auto; color: var(--color-primary); font-size: 21px; }
+@media (max-width: 600px) { .settings-option { padding: 18px 14px; gap: 12px; } .settings-option-icon { width: 40px; height: 40px; } }

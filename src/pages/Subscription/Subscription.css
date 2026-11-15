@@ -1,0 +1,859 @@
+/* ===== SUBSCRIPTION PAGE CSS ===== */
+
+.subscription-page {
+  margin-left: var(--sidebar-width, 260px);
+  width: calc(100% - var(--sidebar-width, 260px));
+  min-height: calc(100vh - 64px);
+  margin-top: 64px;
+  background-color: #0b0c10;
+  color: #f1f5f9;
+  padding: 22px 28px 28px;
+  position: relative;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ambient glow orbs */
+:where(.subscription-page) .subscription-glow-1 {
+  position: absolute;
+  top: -120px;
+  left: 20%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(108, 99, 255, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+:where(.subscription-page) .subscription-glow-2 {
+  position: absolute;
+  top: 150px;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(62, 207, 207, 0.10) 0%, transparent 65%);
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+/* Toast */
+:where(.subscription-page) .sub-toast-notification {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: center;
+  width: 100%;
+  max-width: 640px;
+  box-sizing: border-box;
+  margin: 0 0 20px;
+  padding: 12px 16px;
+  border: 1px solid #6ee7b7;
+  border-radius: 10px;
+  background: #d1fae5;
+  color: #065f46;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.5;
+  z-index: 2;
+}
+:where(.subscription-page) .sub-toast-notification.is-neutral {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1e40af;
+}
+:where(.subscription-page) .sub-toast-message {
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+:where(.subscription-page) .sub-toast-close {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font-size: 22px;
+  cursor: pointer;
+}
+:where(.subscription-page) .sub-toast-close:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+:where(.subscription-page) .sub-toast-close:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Header */
+:where(.subscription-page) .sub-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 18px;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+:where(.subscription-page) .sub-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(108, 99, 255, 0.12);
+  border: 1px solid rgba(108, 99, 255, 0.3);
+  border-radius: 50px;
+  color: #a78bfa;
+  font-size: 0.76rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+:where(.subscription-page) .sub-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 6px;
+  background: linear-gradient(135deg, #ffffff 40%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+:where(.subscription-page) .sub-subtitle {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.4;
+  margin: 0 0 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* Billing Toggle (Simple & Compact) */
+:where(.subscription-page) .billing-toggle-wrap {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 3px;
+  gap: 4px;
+}
+
+:where(.subscription-page) .billing-cycle-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+:where(.subscription-page) .billing-cycle-btn.active {
+  background: linear-gradient(135deg, #6C63FF, #5a52e0);
+  color: #ffffff;
+  box-shadow: 0 2px 10px rgba(108, 99, 255, 0.4);
+}
+
+:where(.subscription-page) .discount-tag {
+  background: #34d399;
+  color: #064e3b;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 10px;
+}
+
+/* Mobile Tabs (< 768px) */
+:where(.subscription-page) .sub-mobile-tabs {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  max-width: 380px;
+  margin: 0 auto 20px;
+  background: rgba(16, 20, 32, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 4px;
+  border-radius: 12px;
+  position: relative;
+  z-index: 3;
+}
+
+:where(.subscription-page) .sub-mobile-tab {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+:where(.subscription-page) .sub-mobile-tab.active {
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.35), rgba(62, 207, 207, 0.25));
+  border: 1px solid rgba(108, 99, 255, 0.5);
+  color: #ffffff;
+}
+
+:where(.subscription-page) .tab-star {
+  color: #fbbf24;
+  font-size: 0.75rem;
+}
+
+/* Pricing Grid — fills remaining viewport height */
+:where(.subscription-page) .pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1080px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  align-items: stretch;
+  flex: 1;
+  min-height: calc(100vh - 230px);
+}
+
+/* Plan Card */
+:where(.subscription-page) .plan-card {
+  background: rgba(16, 18, 27, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 22px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.25s ease;
+  min-height: 100%;
+  height: 100%;
+}
+
+:where(.subscription-page) .plan-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+:where(.subscription-page) .plan-card.featured {
+  background: linear-gradient(180deg, rgba(24, 22, 46, 0.95) 0%, rgba(14, 16, 25, 0.95) 100%);
+  border: 1.5px solid rgba(108, 99, 255, 0.6);
+  box-shadow: 0 10px 28px rgba(108, 99, 255, 0.2);
+}
+
+:where(.subscription-page) .popular-badge {
+  position: absolute;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #6C63FF, #3ECFCF);
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 20px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 10px rgba(108, 99, 255, 0.4);
+}
+
+:where(.subscription-page) .plan-header {
+  margin-bottom: 12px;
+}
+
+:where(.subscription-page) .plan-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+:where(.subscription-page) .plan-icon {
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+:where(.subscription-page) .plan-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+:where(.subscription-page) .plan-tagline {
+  font-size: 0.72rem;
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+:where(.subscription-page) .plan-desc {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  line-height: 1.4;
+  margin: 6px 0 0 0;
+  min-height: 0;
+}
+
+:where(.subscription-page) .plan-pricing {
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+:where(.subscription-page) .price-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+:where(.subscription-page) .plan-currency {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+:where(.subscription-page) .plan-price {
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+}
+
+:where(.subscription-page) .plan-period {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-left: 4px;
+}
+
+:where(.subscription-page) .annual-badge {
+  display: block;
+  font-size: 0.7rem;
+  color: #34d399;
+  margin-top: 4px;
+  font-weight: 600;
+}
+
+/* Features List — clean rows, no dark boxes */
+:where(.subscription-page) .plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.subscription-page .plan-features .feature-item,
+.subscription-page .feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  line-height: 1.4;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  text-align: left;
+}
+
+.subscription-page .feature-item span {
+  color: inherit;
+}
+
+.subscription-page .feature-check {
+  color: #3ECFCF;
+  font-size: 0.85rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  line-height: 1.4;
+  margin-top: 0;
+}
+
+/* Plan Button */
+:where(.subscription-page) .plan-btn {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  text-align: center;
+  margin-top: auto;
+}
+
+:where(.subscription-page) .plan-btn-free {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1f5f9;
+}
+
+:where(.subscription-page) .plan-btn-free:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+:where(.subscription-page) .plan-btn-pro {
+  background: linear-gradient(135deg, #6C63FF, #3ECFCF);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(108, 99, 255, 0.35);
+}
+
+:where(.subscription-page) .plan-btn-pro:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.5);
+}
+
+:where(.subscription-page) .plan-btn-enterprise {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(167, 139, 250, 0.4);
+  color: #c4b5fd;
+}
+
+:where(.subscription-page) .plan-btn-enterprise:hover {
+  background: rgba(167, 139, 250, 0.15);
+  color: #ffffff;
+}
+
+:where(.subscription-page) .plan-btn.current {
+  background: rgba(52, 211, 153, 0.15);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  color: #34d399;
+  cursor: default;
+}
+
+/* FAQ Section (Compact) */
+:where(.subscription-page) .sub-faq-section {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+:where(.subscription-page) .sub-faq-title {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+:where(.subscription-page) .faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+:where(.subscription-page) .faq-card {
+  background: rgba(16, 18, 27, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:where(.subscription-page) .faq-card:hover {
+  border-color: rgba(108, 99, 255, 0.3);
+}
+
+:where(.subscription-page) .faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+:where(.subscription-page) .faq-icon {
+  font-size: 1.1rem;
+  color: #6C63FF;
+  font-weight: 700;
+}
+
+:where(.subscription-page) .faq-answer {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: #94a3b8;
+  line-height: 1.5;
+}
+
+/* Modal Checkout Simulation */
+:where(.subscription-page) .sub-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 16px;
+}
+
+:where(.subscription-page) .sub-modal {
+  background: #11131e;
+  border: 1px solid rgba(108, 99, 255, 0.3);
+  border-radius: 18px;
+  padding: 24px;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.2s ease;
+}
+
+:where(.subscription-page) .sub-modal-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+  text-align: center;
+}
+
+:where(.subscription-page) .sub-modal-subtitle {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+:where(.subscription-page) .sub-modal-summary {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 14px;
+  margin-bottom: 18px;
+}
+
+:where(.subscription-page) .summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+:where(.subscription-page) .summary-row.total {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 8px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+:where(.subscription-page) .sub-modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+:where(.subscription-page) .sub-modal-btn {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+:where(.subscription-page) .sub-modal-btn.confirm {
+  background: linear-gradient(135deg, #6C63FF, #3ECFCF);
+  color: #ffffff;
+}
+
+:where(.subscription-page) .sub-modal-btn.confirm:hover {
+  opacity: 0.95;
+  box-shadow: 0 4px 14px rgba(108, 99, 255, 0.4);
+}
+
+:where(.subscription-page) .sub-modal-btn.cancel {
+  background: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+}
+
+:where(.subscription-page) .sub-modal-btn.cancel:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+}
+
+/* ==========================================================
+   RESPONSIVENESS (DESKTOP / TABLET / MOBILE)
+   ========================================================== */
+@media (max-width: 1080px) and (min-width: 769px) {
+  :where(.subscription-page) .pricing-grid {
+    gap: 14px;
+    padding: 0 8px;
+    min-height: calc(100vh - 220px);
+  }
+
+  :where(.subscription-page) .plan-card {
+    padding: 18px 14px 16px;
+  }
+
+  :where(.subscription-page) .plan-name {
+    font-size: 1.05rem;
+  }
+
+  :where(.subscription-page) .plan-price {
+    font-size: 1.85rem;
+  }
+
+  .subscription-page .feature-item {
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .subscription-page {
+    margin-left: 0;
+    width: 100%;
+    padding: 18px 16px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .subscription-page {
+    margin-left: 0;
+    width: 100%;
+    padding: 16px 14px 20px;
+    min-height: calc(100vh - 64px);
+  }
+
+  :where(.subscription-page) .sub-header {
+    margin: 0 auto 12px;
+  }
+
+  :where(.subscription-page) .sub-title {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+  }
+
+  :where(.subscription-page) .sub-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    line-height: 1.35;
+  }
+
+  /* 1-by-1 Plan Tab Switcher on Mobile */
+  :where(.subscription-page) .sub-mobile-tabs {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto 14px;
+    background: rgba(16, 20, 32, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 4px;
+    border-radius: 12px;
+    position: relative;
+    z-index: 3;
+    flex-shrink: 0;
+  }
+
+  :where(.subscription-page) .sub-mobile-tab {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 8px 6px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  :where(.subscription-page) .sub-mobile-tab .tab-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  :where(.subscription-page) .sub-mobile-tab.active {
+    background: linear-gradient(135deg, rgba(108, 99, 255, 0.45), rgba(62, 207, 207, 0.3));
+    border: 1px solid rgba(108, 99, 255, 0.6);
+    color: #ffffff;
+    box-shadow: 0 2px 10px rgba(108, 99, 255, 0.35);
+  }
+
+  :where(.subscription-page) .pricing-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    max-width: 400px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    flex: 1 !important;
+    min-height: calc(100vh - 250px) !important;
+  }
+
+  :where(.subscription-page) .plan-card.mobile-hide {
+    display: none !important;
+  }
+
+  :where(.subscription-page) .plan-card.mobile-show {
+    display: flex !important;
+    animation: fadeIn 0.25s ease;
+    flex: 1 !important;
+    min-height: calc(100vh - 260px) !important;
+    height: auto !important;
+  }
+
+  :where(.subscription-page) .plan-card {
+    padding: 20px 18px 18px !important;
+    border-radius: 16px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  :where(.subscription-page) .plan-header {
+    margin-bottom: 10px;
+  }
+
+  :where(.subscription-page) .plan-title-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+
+  :where(.subscription-page) .plan-icon {
+    font-size: 1.4rem;
+  }
+
+  :where(.subscription-page) .plan-name {
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+
+  :where(.subscription-page) .plan-tagline {
+    font-size: 0.72rem;
+  }
+
+  :where(.subscription-page) .plan-desc {
+    display: block !important;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin: 6px 0 0 0;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+
+  :where(.subscription-page) .popular-badge {
+    top: -11px;
+    font-size: 0.65rem;
+    padding: 3px 12px;
+  }
+
+  :where(.subscription-page) .plan-pricing {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+  }
+
+  :where(.subscription-page) .plan-currency {
+    font-size: 1.1rem;
+  }
+
+  :where(.subscription-page) .plan-price {
+    font-size: 2rem;
+  }
+
+  :where(.subscription-page) .plan-period {
+    font-size: 0.8rem;
+  }
+
+  :where(.subscription-page) .annual-badge {
+    font-size: 0.7rem;
+    margin-top: 4px;
+  }
+
+  :where(.subscription-page) .plan-features {
+    gap: 8px;
+    margin: 0 0 16px 0;
+  }
+
+  .subscription-page .feature-item {
+    font-size: 0.84rem !important;
+    gap: 8px !important;
+    line-height: 1.4 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .subscription-page .feature-check {
+    font-size: 0.85rem;
+  }
+
+  :where(.subscription-page) .plan-btn {
+    padding: 12px 14px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  :where(.subscription-page) .sub-mobile-tab .tab-icon {
+    display: none;
+  }
+
+  :where(.subscription-page) .sub-mobile-tab {
+    font-size: 0.72rem;
+    padding: 8px 4px;
+  }
+
+  .subscription-page .feature-item {
+    font-size: 0.8rem !important;
+  }
+}

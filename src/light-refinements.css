@@ -1,0 +1,72 @@
+/* Soft lavender light theme. Exported documents retain their own surfaces. */
+:root[data-theme="light"],:root[data-theme="light"] body {
+ --ui-bg:#f2eff8;--ui-panel:#fcfaff;--ui-border:#dcd3e9;--ui-text:#342c46;--ui-muted:#72637f;--ui-accent:#7756bd;
+ --color-bg:#f2eff8;--color-surface:#fcfaff;--color-border:#dcd3e9;--color-text:#342c46;--color-text-muted:#72637f;--color-primary:#795ac4;
+}
+:root[data-theme="light"] body,:root[data-theme="light"] #root,:root[data-theme="light"] .app-layout {
+ background-color:#f2eff8 !important;background-image:radial-gradient(ellipse at 90% 0%,#d9d7f53b,transparent 50%),radial-gradient(ellipse at 0% 100%,#e5d6ee38,transparent 55%) !important;color:#342c46 !important;
+}
+:root[data-theme="light"] :is(.navbar,.admin-topbar) {
+ background:linear-gradient(110deg,#eee8f7ed 0%,#f3edf9ed 48%,#e8ecf7ed 100%) !important;
+ border-bottom:1px solid #d6cce6 !important;box-shadow:0 3px 20px #58416f08 !important;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+}
+:root[data-theme="light"] .navbar .navbar-logo .logo-text { background:linear-gradient(115deg,#6852a6,#9465c4) !important;background-clip:text !important;-webkit-background-clip:text !important; }
+:root[data-theme="light"] :is(.sidebar,.admin-sidebar) {
+ background:radial-gradient(ellipse at 10% 0%,#e3d9f5a6,transparent 60%),linear-gradient(180deg,#f0eaf8 0%,#eae5f4 56%,#e3e3f1 100%) !important;
+ border-right:1px solid #d4c9e5 !important;box-shadow:5px 0 24px #674c8b06 !important;
+}
+:root[data-theme="light"] .sidebar .sidebar-heading,:root[data-theme="light"] .admin-nav-caption { color:#756181 !important;font-weight:650;font-size:10px;letter-spacing:1.2px; }
+:root[data-theme="light"] .sidebar .sidebar-section + .sidebar-section { border-color:#d8cce67a; }
+:root[data-theme="light"] .sidebar .sidebar-link,:root[data-theme="light"] .admin-sidebar nav button { color:#5d526f !important;border-radius:11px; }
+:root[data-theme="light"] .sidebar .sidebar-link-icon { color:#8b79a6 !important; }
+:root[data-theme="light"] .sidebar .sidebar-link:hover:not(.active),:root[data-theme="light"] .admin-sidebar nav button:hover:not(.selected) { background:#ffffff80 !important;color:#624a8c !important;border-color:#c6b7dd66; }
+:root[data-theme="light"] .sidebar .sidebar-link.active,:root[data-theme="light"] .sidebar .sidebar-link.active:hover,:root[data-theme="light"] .admin-sidebar nav button.selected {
+ background:linear-gradient(110deg,#7357bc,#8064c7) !important;color:#fff !important;border-color:#7255b8 !important;box-shadow:0 5px 13px #7655ba24 !important;font-weight:600;
+}
+:root[data-theme="light"] .sidebar .sidebar-link.active .sidebar-link-icon { color:#f2eaff !important; }
+:root[data-theme="light"] .sidebar .sidebar-link-dot { background:#e7d9ff; }
+:root[data-theme="light"] .sidebar::-webkit-scrollbar-thumb { background:#c9badd; }
+:root[data-theme="light"] .sidebar .sidebar-header-mobile { background:#e9e0f3;border-color:#d6c9e6 !important; }
+:root[data-theme="light"] .sidebar :is(.sidebar-mobile-title,.sidebar-close-btn) { color:#67527f !important; }
+:root[data-theme="light"] .navbar :is(.navbar-theme-btn,.profile-btn,.navbar-hamburger-btn) {
+ background:#faf6ffad !important;border:1px solid #cfc0e1 !important;color:#6e5689 !important;box-shadow:0 2px 7px #76539908 !important;
+}
+:root[data-theme="light"] .navbar :is(.navbar-theme-btn,.profile-btn,.navbar-hamburger-btn):hover { background:#fff9ff !important;border-color:#b8a1d2 !important; }
+:root[data-theme="light"] .navbar .navbar-sub-btn { background:linear-gradient(115deg,#7a5ec0,#8a6dc9) !important;color:#fff !important;border:1px solid #795bb9 !important;box-shadow:0 4px 12px #7655ba20 !important; }
+:root[data-theme="light"] .navbar .navbar-sub-btn:hover { background:linear-gradient(115deg,#6f50b6,#8060c1) !important;color:#fff !important; }
+:root[data-theme="light"] .navbar .profile-avatar { background:#e7def4 !important;border-color:#c6b4df !important; }
+:root[data-theme="light"] .navbar .dropdown-menu { background:#fcf8ff !important;border-color:#d8cce7 !important;box-shadow:0 16px 45px #5d447525 !important; }
+:root[data-theme="light"] .navbar .dropdown-item { color:#574966 !important; }
+:root[data-theme="light"] .navbar .dropdown-item:hover { background:#eee5f7 !important;color:#714f9c !important; }
+:root[data-theme="light"] .navbar .dropdown-item-danger { color:#a24a66 !important; }
+:root[data-theme="light"] .home-content { --ov-text:#342c46;--ov-muted:#72637f;--ov-panel:#fcfaff;--ov-border:#dcd3e9; }
+:root[data-theme="light"] .home-content .overview-hero { background:radial-gradient(ellipse at 82% 35%,#c9caec80,transparent 60%),linear-gradient(115deg,#e9e0f5,#eeeafa 65%,#e4ebf6) !important;border-color:#cfc0e5 !important;box-shadow:0 12px 35px #6c4d8f08; }
+:root[data-theme="light"] .home-content .overview-account { background:#e9e2f1;border-color:#d7cbe5;color:#746180; }
+:root[data-theme="light"] .home-content :is(.overview-tool-card,.overview-shortcuts>a) { background:#fcfaff !important;border-color:#ddd2e9 !important;box-shadow:0 5px 18px #6d538b05; }
+:root[data-theme="light"] .home-content :is(.overview-tool-card,.overview-shortcuts>a):hover { background:#fffaff !important;border-color:#b9a5d4 !important;box-shadow:0 8px 20px #77529510; }
+:root[data-theme="light"] .home-content .overview-search { background:#faf6fe;border-color:#d9cce8; }
+:root[data-theme="light"] .home-content .overview-filters button.selected { background:#e4d8f4;color:#725092;border-color:#d3bfe7; }
+:root[data-theme="light"] .admin-shell { background:#f2eff8; }
+:root[data-theme="light"] .admin-shell .admin-topbar-actions button { background:#f8f2fc;border-color:#d5c6e3;color:#6d5583; }
+:root[data-theme="light"] .admin-shell .admin-sidebar-footer { color:#675477; }
+:root[data-theme="light"] :is(.sidebar,.navbar,.admin-shell) :is(button,a):focus-visible { outline:2px solid #8663bb;outline-offset:3px; }
+@media(max-width:900px){:root[data-theme="light"] .sidebar { box-shadow:10px 0 40px #49315a24 !important; }}
+
+:root[data-theme="light"] .sidebar .sidebar-link.active .sidebar-link-label,:root[data-theme="light"] .sidebar .sidebar-link.active .sidebar-link-icon,:root[data-theme="light"] .sidebar .sidebar-link.active svg,:root[data-theme="light"] .navbar .navbar-sub-btn,:root[data-theme="light"] .navbar .navbar-sub-btn span { color:#fff !important;-webkit-text-fill-color:#fff !important; }
+
+/* Tinted chat history and speech toolbar. */
+:root[data-theme="light"] .app-layout .aichat-container .aichat-sessions-sidebar {
+ background:linear-gradient(160deg,#e8def5 0%,#e7e4f5 50%,#dde8f3 100%) !important;border-right:1px solid #cfc2e4 !important;
+}
+:root[data-theme="light"] .aichat-container .sessions-header { background:transparent !important; }
+:root[data-theme="light"] .aichat-container .btn-new-chat { background:#f5effcad !important;border-color:#c4b0e3 !important;color:#725394 !important; }
+:root[data-theme="light"] .aichat-container .session-item.active { background:#f6f0ffb3 !important;border-color:#cbb9e4 !important;box-shadow:0 3px 9px #72539c08; }
+:root[data-theme="light"] .aichat-container .chat-history-heading { color:#79618c !important; }
+:root[data-theme="light"] .app-layout .aivoice-root .voice-topbar { background:linear-gradient(110deg,#e9dff4 0%,#e9e3f7 48%,#e1eaf6 100%) !important;border-bottom:1px solid #cfc1e2 !important;box-shadow:0 3px 16px #78578d08; }
+:root[data-theme="light"] .aivoice-root .voice-mode-tabs { background:#f6f0fca1 !important;border-color:#cfbfe2 !important; }
+:root[data-theme="light"] .aivoice-root .voice-mode-tabs .mode-tab.active { background:#d7c7ee !important;color:#694b8e !important;border-color:#c2adde !important; }
+:root[data-theme="light"] .aivoice-root .voice-lang-select { background:#f8f3fcb3 !important;border-color:#cbb9df !important;color:#68517d !important; }
+
+/* Match the scanner empty state to the PDF-to-Word upload surface. */
+:root[data-theme="light"] .app-layout .camscan-container .empty-scan-state { background:color-mix(in srgb,var(--ui-panel) 88%,transparent) !important;border:1px dashed #b8a1df66 !important;box-shadow:0 12px 40px #47326007 !important; }
+:root[data-theme="light"] .app-layout .camscan-container .empty-scan-state:hover { background:color-mix(in srgb,var(--ui-panel) 96%,transparent) !important;border-color:#a58acb !important; }

@@ -1,0 +1,1853 @@
+/* ==========================================================
+   EASY & CLEAN AI CAREER ANALYSER CSS
+   ========================================================== */
+
+/* ── Page Container (sidebar-aware layout) ─────────────────── */
+.easy-career-page {
+  margin-left: var(--sidebar-width, 260px);
+  margin-top: 64px;
+  width: calc(100% - var(--sidebar-width, 260px));
+  min-height: calc(100vh - 64px);
+  background-color: #06080e;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(108, 99, 255, 0.1) 0%, transparent 60%),
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  padding: 32px 20px 80px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  position: relative;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  color: #f1f5f9;
+}
+
+/* ── Tablet / mobile overrides ─────────────────────────────── */
+@media (max-width: 900px) {
+  .easy-career-page {
+    margin-left: 0;
+    width: 100%;
+    padding: 24px 14px 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  .easy-career-page {
+    margin-left: 0;
+    width: 100%;
+    padding: 16px 10px 50px;
+  }
+}
+
+/* ── Shared component styles (glow orb, header, badge, title) ─ */
+:where(.easy-career-page) .converter-glow-orb {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 650px;
+  height: 650px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(108,99,255,0.07) 0%, rgba(62,207,207,0.03) 45%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  animation: glowPulse 6s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.8; transform: translateX(-50%) scale(1); }
+  50% { opacity: 1.2; transform: translateX(-50%) scale(1.08); }
+}
+
+:where(.easy-career-page) .converter-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 720px;
+  width: 100%;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+:where(.easy-career-page) .converter-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 14px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #cbd5e1;
+}
+
+:where(.easy-career-page) .badge-sparkle { color: #38bdf8; }
+
+:where(.easy-career-page) .converter-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -0.6px;
+  background: linear-gradient(135deg, #ffffff 30%, #cbd5e1 70%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+:where(.easy-career-page) .converter-subtitle {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  max-width: 620px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+  :where(.easy-career-page) .converter-title { font-size: 1.55rem; }
+  :where(.easy-career-page) .converter-subtitle { font-size: 0.85rem; }
+}
+
+/* ==========================================================
+   WIZARD STEP BAR
+   ========================================================== */
+:where(.easy-career-page) .wizard-steps-bar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  max-width: 520px;
+  z-index: 1;
+  margin-bottom: 4px;
+  box-sizing: border-box;
+}
+
+:where(.easy-career-page) .wizard-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+:where(.easy-career-page) .wizard-step.active {
+  background: rgba(108, 99, 255, 0.15);
+  border-color: rgba(108, 99, 255, 0.4);
+}
+
+:where(.easy-career-page) .wizard-step.completed {
+  background: rgba(52, 211, 153, 0.1);
+  border-color: rgba(52, 211, 153, 0.3);
+}
+
+:where(.easy-career-page) .wizard-step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #64748b;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+:where(.easy-career-page) .wizard-step.active .wizard-step-num {
+  background: rgba(108, 99, 255, 0.3);
+  border-color: #6C63FF;
+  color: #ffffff;
+}
+
+:where(.easy-career-page) .wizard-step.completed .wizard-step-num {
+  background: rgba(52, 211, 153, 0.25);
+  border-color: #34d399;
+  color: #34d399;
+}
+
+:where(.easy-career-page) .wizard-step-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #475569;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+:where(.easy-career-page) .wizard-step.active .wizard-step-label {
+  color: #e2e8f0;
+}
+
+:where(.easy-career-page) .wizard-step.completed .wizard-step-label {
+  color: #34d399;
+}
+
+:where(.easy-career-page) .wizard-step-connector {
+  flex: 1;
+  min-width: 20px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.06);
+  margin: 0 4px;
+}
+
+/* Main Input Card */
+:where(.easy-career-page) .easy-card {
+  width: 100%;
+  max-width: 680px;
+  background: rgba(14, 18, 30, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(108, 99, 255, 0.45);
+  border-radius: 20px;
+  padding: 30px 26px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(108, 99, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: fadeSlideUp 0.35s ease;
+}
+
+:where(.easy-career-page) .easy-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #6C63FF, #3ECFCF, transparent);
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+:where(.easy-career-page) .easy-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+:where(.easy-career-page) .group-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+:where(.easy-career-page) .easy-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+:where(.easy-career-page) .easy-sample-btn {
+  background: rgba(108, 99, 255, 0.15);
+  border: 1px solid rgba(108, 99, 255, 0.35);
+  color: #3ECFCF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:where(.easy-career-page) .easy-sample-btn:hover {
+  background: rgba(108, 99, 255, 0.28);
+  color: #ffffff;
+}
+
+:where(.easy-career-page) .easy-select {
+  width: 100%;
+  background: rgba(10, 12, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  padding: 12px 14px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+:where(.easy-career-page) .easy-select:focus {
+  border-color: #6C63FF;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+:where(.easy-career-page) .easy-select option {
+  background: #10121a;
+  color: #ffffff;
+}
+
+/* Role Mode Toggle (Preset vs Custom) */
+:where(.easy-career-page) .role-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+:where(.easy-career-page) .role-mode-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
+  font-size: 0.74rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:where(.easy-career-page) .role-mode-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+:where(.easy-career-page) .role-mode-btn.active {
+  background: rgba(108, 99, 255, 0.25);
+  border-color: #6C63FF;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+:where(.easy-career-page) .preset-role-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+:where(.easy-career-page) .preset-hint {
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+:where(.easy-career-page) .preset-hint strong {
+  color: #3ECFCF;
+}
+
+/* Custom Role Input Box */
+:where(.easy-career-page) .custom-role-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(10, 12, 22, 0.5);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+:where(.easy-career-page) .custom-role-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+:where(.easy-career-page) .custom-role-input {
+  width: 100%;
+  background: rgba(15, 18, 30, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  padding: 11px 40px 11px 14px;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 600;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+:where(.easy-career-page) .custom-role-input:focus {
+  border-color: #3ECFCF;
+  box-shadow: 0 0 0 3px rgba(62, 207, 207, 0.2);
+}
+
+:where(.easy-career-page) .clear-custom-role-btn {
+  position: absolute;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #94a3b8;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+:where(.easy-career-page) .clear-custom-role-btn:hover {
+  background: rgba(248, 113, 113, 0.3);
+  color: #ffffff;
+}
+
+:where(.easy-career-page) .custom-role-quick-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+:where(.easy-career-page) .quick-chips-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+:where(.easy-career-page) .sugg-chip-btn {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 4px 9px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+:where(.easy-career-page) .sugg-chip-btn:hover {
+  background: rgba(108, 99, 255, 0.2);
+  border-color: rgba(108, 99, 255, 0.4);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* Step 2 Job Title quick chips */
+:where(.easy-career-page) .jd-title-hint-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+:where(.easy-career-page) .jd-hint-label {
+  font-size: 0.68rem;
+  color: #64748b;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+:where(.easy-career-page) .jd-mini-chip {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+:where(.easy-career-page) .jd-mini-chip:hover {
+  background: rgba(62, 207, 207, 0.15);
+  border-color: rgba(62, 207, 207, 0.35);
+  color: #3ECFCF;
+}
+
+/* Mode Switcher (Upload vs Paste) */
+:where(.easy-career-page) .input-mode-switcher {
+  display: flex;
+  background: rgba(10, 12, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 3px;
+  gap: 4px;
+  width: fit-content;
+}
+
+:where(.easy-career-page) .mode-pill {
+  background: transparent;
+  border: none;
+  color: #8c8ca4;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:where(.easy-career-page) .mode-pill.active {
+  background: rgba(108, 99, 255, 0.25);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Simple Dropzone */
+:where(.easy-career-page) .easy-dropzone {
+  border: 2px dashed rgba(108, 99, 255, 0.35);
+  border-radius: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  background: rgba(108, 99, 255, 0.03);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s ease;
+}
+
+:where(.easy-career-page) .easy-dropzone:hover {
+  border-color: #3ECFCF;
+  background: rgba(62, 207, 207, 0.04);
+}
+
+:where(.easy-career-page) .easy-dropzone.has-file {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.04);
+}
+
+:where(.easy-career-page) .drop-icon {
+  font-size: 2.2rem;
+}
+
+:where(.easy-career-page) .drop-text h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  word-break: break-all;
+}
+
+:where(.easy-career-page) .drop-text p {
+  font-size: 0.78rem;
+  color: #8c8ca4;
+  margin: 0;
+}
+
+:where(.easy-career-page) .btn-simple-browse {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Paste Mode */
+:where(.easy-career-page) .easy-paste-wrap {
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 12, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+:where(.easy-career-page) .easy-textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 12px 14px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+:where(.easy-career-page) .easy-clear-btn {
+  align-self: flex-end;
+  background: transparent;
+  border: none;
+  color: #f87171;
+  font-size: 0.72rem;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+/* Helper Notes */
+:where(.easy-career-page) .easy-help-note {
+  font-size: 0.76rem;
+  color: #64748b;
+  text-align: center;
+  padding: 6px 0;
+}
+
+:where(.easy-career-page) .easy-help-note span {
+  color: #8c8ca4;
+}
+
+/* Big Action Button */
+:where(.easy-career-page) .btn-easy-analyze {
+  background: linear-gradient(135deg, #6C63FF, #3ECFCF);
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 4px 18px rgba(108, 99, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+:where(.easy-career-page) .btn-easy-analyze:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(108, 99, 255, 0.55);
+}
+
+:where(.easy-career-page) .btn-easy-analyze:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+:where(.easy-career-page) .btn-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================
+   STEP 2: JOB DETAILS CARD
+   ========================================================== */
+:where(.easy-career-page) .job-details-card {
+  max-width: 740px;
+}
+
+:where(.easy-career-page) .job-details-card::before {
+  background: linear-gradient(90deg, transparent, #3ECFCF, #6C63FF, transparent);
+}
+
+:where(.easy-career-page) .jd-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+:where(.easy-career-page) .jd-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+:where(.easy-career-page) .btn-back-step {
+  background: transparent;
+  border: none;
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: color 0.2s;
+}
+
+:where(.easy-career-page) .btn-back-step:hover {
+  color: #3ECFCF;
+}
+
+:where(.easy-career-page) .jd-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+:where(.easy-career-page) .jd-subtitle {
+  font-size: 0.82rem;
+  color: #8c8ca4;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* CV Loaded Badge */
+:where(.easy-career-page) .cv-loaded-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.25);
+  border-radius: 10px;
+  padding: 10px 14px;
+}
+
+:where(.easy-career-page) .cv-loaded-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+:where(.easy-career-page) .cv-loaded-text {
+  font-size: 0.82rem;
+  color: #94a3b8;
+}
+
+:where(.easy-career-page) .cv-loaded-text strong {
+  color: #34d399;
+}
+
+:where(.easy-career-page) .cv-loaded-chars {
+  color: #475569;
+  margin-left: 6px;
+  font-size: 0.72rem;
+}
+
+/* Row Fields */
+:where(.easy-career-page) .jd-row-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+:where(.easy-career-page) .jd-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+:where(.easy-career-page) .jd-input {
+  width: 100%;
+  background: rgba(10, 12, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 11px 14px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+:where(.easy-career-page) .jd-input:focus {
+  border-color: #6C63FF;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+:where(.easy-career-page) .jd-input::placeholder {
+  color: #475569;
+}
+
+/* JD Textarea */
+:where(.easy-career-page) .jd-textarea-wrap {
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 12, 18, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+:where(.easy-career-page) .jd-textarea-wrap:focus-within {
+  border-color: #6C63FF;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.12);
+}
+
+:where(.easy-career-page) .jd-textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 14px 16px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+  line-height: 1.55;
+  min-height: 140px;
+}
+
+:where(.easy-career-page) .jd-textarea::placeholder {
+  color: #3e4254;
+}
+
+:where(.easy-career-page) .jd-char-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 6px 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+:where(.easy-career-page) .jd-char-count {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+:where(.easy-career-page) .jd-char-count.good {
+  color: #34d399;
+}
+
+:where(.easy-career-page) .jd-char-count.low {
+  color: #fbbf24;
+}
+
+:where(.easy-career-page) .jd-quality-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+:where(.easy-career-page) .jd-quality-badge.warning {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.1);
+}
+
+/* Action Row */
+:where(.easy-career-page) .jd-action-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+:where(.easy-career-page) .btn-skip-jd {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #64748b;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+:where(.easy-career-page) .btn-skip-jd:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #94a3b8;
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+:where(.easy-career-page) .btn-skip-jd:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ==========================================================
+   RESULTS CARD (CLEAN & DIRECT)
+   ========================================================== */
+:where(.easy-career-page) .easy-results-card {
+  width: 100%;
+  max-width: 760px;
+  background: rgba(14, 18, 30, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(108, 99, 255, 0.45);
+  border-radius: 20px;
+  padding: 28px 24px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 1;
+  box-sizing: border-box;
+  animation: fadeSlideUp 0.35s ease;
+}
+
+/* Top Banner */
+:where(.easy-career-page) .easy-score-banner {
+  background: linear-gradient(135deg, rgba(108, 99, 255, 0.12), rgba(62, 207, 207, 0.08));
+  border: 1px solid rgba(108, 99, 255, 0.35);
+  border-radius: 16px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+:where(.easy-career-page) .score-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+:where(.easy-career-page) .banner-role-tag {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+:where(.easy-career-page) .banner-company {
+  color: #3ECFCF;
+  font-weight: 700;
+}
+
+:where(.easy-career-page) .score-main {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+:where(.easy-career-page) .score-val {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #3ECFCF;
+  line-height: 1;
+}
+
+:where(.easy-career-page) .score-text {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+:where(.easy-career-page) .btn-start-over {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #cbd5e1;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:where(.easy-career-page) .btn-start-over:hover {
+  background: rgba(108, 99, 255, 0.2);
+  color: #ffffff;
+  border-color: #6C63FF;
+}
+
+/* JD Summary Banner */
+:where(.easy-career-page) .jd-summary-banner {
+  display: flex;
+  gap: 14px;
+  background: linear-gradient(135deg, rgba(62, 207, 207, 0.06), rgba(108, 99, 255, 0.04));
+  border: 1px solid rgba(62, 207, 207, 0.2);
+  border-radius: 14px;
+  padding: 16px 18px;
+  align-items: flex-start;
+}
+
+:where(.easy-career-page) .jd-summary-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+:where(.easy-career-page) .jd-summary-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+:where(.easy-career-page) .jd-summary-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+:where(.easy-career-page) .jd-at-company {
+  color: #3ECFCF;
+  font-weight: 800;
+}
+
+:where(.easy-career-page) .jd-summary-text {
+  font-size: 0.78rem;
+  color: #8c8ca4;
+  line-height: 1.5;
+  margin: 0;
+}
+
+:where(.easy-career-page) .jd-summary-text strong {
+  color: #fbbf24;
+}
+
+/* Section */
+:where(.easy-career-page) .easy-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+:where(.easy-career-page) .section-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+:where(.easy-career-page) .q-count-badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #3ECFCF;
+  background: rgba(62, 207, 207, 0.12);
+  padding: 3px 10px;
+  border-radius: 6px;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+/* Skills Dual Row */
+:where(.easy-career-page) .skills-dual-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+:where(.easy-career-page) .skill-box {
+  background: rgba(20, 22, 34, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+:where(.easy-career-page) .skill-box.jd-gaps {
+  grid-column: 1 / -1;
+}
+
+:where(.easy-career-page) .box-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+:where(.easy-career-page) .box-title.green { color: #34d399; }
+:where(.easy-career-page) .box-title.amber { color: #fbbf24; }
+:where(.easy-career-page) .box-title.red { color: #f87171; }
+
+:where(.easy-career-page) .chips-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+:where(.easy-career-page) .chip {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+:where(.easy-career-page) .chip.green {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #34d399;
+}
+
+:where(.easy-career-page) .chip.amber {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fbbf24;
+}
+
+:where(.easy-career-page) .chip.red {
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.25);
+  color: #f87171;
+}
+
+/* Questions Simple List */
+:where(.easy-career-page) .questions-simple-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+:where(.easy-career-page) .simple-question-card {
+  background: rgba(20, 22, 34, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+:where(.easy-career-page) .question-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+:where(.easy-career-page) .question-type-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #3ECFCF;
+  background: rgba(62, 207, 207, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+:where(.easy-career-page) .btn-toggle-tip {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a78bfa;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:where(.easy-career-page) .btn-toggle-tip:hover {
+  background: rgba(108, 99, 255, 0.15);
+  color: #ffffff;
+}
+
+:where(.easy-career-page) .question-body {
+  font-size: 0.88rem;
+  color: #e2e8f0;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+:where(.easy-career-page) .answer-tip-box {
+  background: rgba(108, 99, 255, 0.08);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  line-height: 1.45;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Action Steps List */
+:where(.easy-career-page) .action-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+:where(.easy-career-page) .step-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(20, 22, 34, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+}
+
+:where(.easy-career-page) .step-item.highlight {
+  background: rgba(62, 207, 207, 0.06);
+  border-color: rgba(62, 207, 207, 0.2);
+}
+
+:where(.easy-career-page) .step-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(108, 99, 255, 0.2);
+  border: 1px solid #6C63FF;
+  color: #3ECFCF;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  :where(.easy-career-page) .easy-card, :where(.easy-career-page) .easy-results-card {
+    padding: 22px 16px;
+  }
+
+  :where(.easy-career-page) .skills-dual-row {
+    grid-template-columns: 1fr;
+  }
+
+  :where(.easy-career-page) .easy-score-banner {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  :where(.easy-career-page) .score-left {
+    align-items: center;
+  }
+
+  :where(.easy-career-page) .btn-start-over {
+    width: 100%;
+  }
+
+  :where(.easy-career-page) .jd-row-fields {
+    grid-template-columns: 1fr;
+  }
+
+  :where(.easy-career-page) .wizard-steps-bar {
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: center;
+  }
+
+  :where(.easy-career-page) .wizard-step-connector {
+    display: none;
+  }
+}
+
+/* ==========================================================
+   START INTERVIEW BUTTON
+   ========================================================== */
+:where(.easy-career-page) .btn-start-interview {
+  width: 100%;
+  background: linear-gradient(135deg, #6C63FF 0%, #3ECFCF 100%);
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 16px 24px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 24px rgba(108, 99, 255, 0.45);
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+:where(.easy-career-page) .btn-start-interview:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(108, 99, 255, 0.6);
+}
+
+:where(.easy-career-page) .interview-badge-jd {
+  font-size: 0.65rem;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 3px 8px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ==========================================================
+   INTERVIEW OVERLAY & CARD
+   ========================================================== */
+:where(.easy-career-page) .interview-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 8, 14, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+:where(.easy-career-page) .interview-card {
+  width: 100%;
+  max-width: 660px;
+  background: rgba(14, 18, 30, 0.95);
+  border: 1px solid rgba(108, 99, 255, 0.35);
+  border-radius: 22px;
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow:
+    0 32px 80px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(108, 99, 255, 0.15),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  position: relative;
+  animation: slideUpCard 0.3s ease;
+}
+
+@keyframes slideUpCard {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Header bar */
+:where(.easy-career-page) .iv-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+:where(.easy-career-page) .iv-progress-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+:where(.easy-career-page) .iv-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+:where(.easy-career-page) .iv-step-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #3ECFCF;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+:where(.easy-career-page) .iv-company-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+:where(.easy-career-page) .iv-progress-bar {
+  width: 100%;
+  height: 5px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+:where(.easy-career-page) .iv-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #6C63FF, #3ECFCF);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+:where(.easy-career-page) .iv-exit-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+:where(.easy-career-page) .iv-exit-btn:hover {
+  background: rgba(248, 113, 113, 0.15);
+  border-color: #f87171;
+  color: #f87171;
+}
+
+/* Question section */
+:where(.easy-career-page) .iv-question-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(108, 99, 255, 0.06);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  border-radius: 14px;
+  padding: 18px 16px;
+}
+
+:where(.easy-career-page) .iv-type-tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #3ECFCF;
+  background: rgba(62, 207, 207, 0.12);
+  padding: 3px 10px;
+  border-radius: 4px;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+:where(.easy-career-page) .iv-question-text {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f1f5f9;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Answer input */
+:where(.easy-career-page) .iv-answer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+:where(.easy-career-page) .iv-answer-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+:where(.easy-career-page) .iv-answer-textarea {
+  width: 100%;
+  background: rgba(10, 12, 20, 0.85);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-family: inherit;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+
+:where(.easy-career-page) .iv-answer-textarea:focus {
+  border-color: #6C63FF;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.15);
+}
+
+:where(.easy-career-page) .iv-char-count {
+  font-size: 0.72rem;
+  color: #64748b;
+  text-align: right;
+}
+
+/* Submit button */
+:where(.easy-career-page) .iv-submit-btn {
+  background: linear-gradient(135deg, #6C63FF, #3ECFCF);
+  border: none;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 14px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  box-shadow: 0 4px 18px rgba(108, 99, 255, 0.4);
+}
+
+:where(.easy-career-page) .iv-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(108, 99, 255, 0.55);
+}
+
+:where(.easy-career-page) .iv-submit-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Hint */
+:where(.easy-career-page) .iv-hint-toggle {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #a78bfa;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  align-self: flex-start;
+}
+
+:where(.easy-career-page) .iv-hint-toggle:hover {
+  background: rgba(108, 99, 255, 0.12);
+  color: #ffffff;
+}
+
+:where(.easy-career-page) .iv-hint-box {
+  background: rgba(108, 99, 255, 0.08);
+  border: 1px solid rgba(108, 99, 255, 0.2);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  line-height: 1.55;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================
+   FINAL REPORT CARD
+   ========================================================== */
+:where(.easy-career-page) .report-card {
+  max-width: 720px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+:where(.easy-career-page) .report-top {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+/* Animated score circle */
+:where(.easy-career-page) .report-score-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--grade-color, #3ECFCF) 0%,
+    rgba(255,255,255,0.06) 0%
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.4), 0 0 24px rgba(108,99,255,0.3);
+  flex-shrink: 0;
+  position: relative;
+}
+
+:where(.easy-career-page) .report-score-circle::after {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border-radius: 50%;
+  background: #0e121e;
+}
+
+:where(.easy-career-page) .report-score-num {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--grade-color, #3ECFCF);
+  position: relative;
+  z-index: 1;
+  line-height: 1;
+}
+
+:where(.easy-career-page) .report-score-label {
+  font-size: 0.7rem;
+  color: #64748b;
+  position: relative;
+  z-index: 1;
+}
+
+:where(.easy-career-page) .report-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+}
+
+:where(.easy-career-page) .report-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+}
+
+:where(.easy-career-page) .report-company-info {
+  font-size: 0.78rem;
+  color: #3ECFCF;
+  font-weight: 600;
+}
+
+:where(.easy-career-page) .report-grade {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+:where(.easy-career-page) .report-subtitle {
+  font-size: 0.84rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.45;
+  max-width: 340px;
+}
+
+/* Breakdown */
+:where(.easy-career-page) .report-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+:where(.easy-career-page) .report-section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+:where(.easy-career-page) .report-q-item {
+  background: rgba(20, 22, 34, 0.65);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+:where(.easy-career-page) .rq-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+:where(.easy-career-page) .rq-num {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #64748b;
+  background: rgba(255,255,255,0.06);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+:where(.easy-career-page) .rq-type {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #3ECFCF;
+  background: rgba(62, 207, 207, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
+  flex: 1;
+}
+
+:where(.easy-career-page) .rq-score {
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-left: auto;
+}
+
+:where(.easy-career-page) .rq-question {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+:where(.easy-career-page) .rq-answer-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+:where(.easy-career-page) .rq-your-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+:where(.easy-career-page) .rq-answer-text {
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  margin: 0;
+  line-height: 1.5;
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+  padding: 8px 10px;
+  max-height: 80px;
+  overflow-y: auto;
+}
+
+:where(.easy-career-page) .rq-feedback {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  background: rgba(10, 12, 20, 0.5);
+  border-left: 3px solid #6C63FF;
+  border-radius: 0 8px 8px 0;
+  padding: 8px 12px;
+  line-height: 1.5;
+}
+
+/* Report action buttons */
+:where(.easy-career-page) .report-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+:where(.easy-career-page) .btn-retry-interview {
+  flex: 1;
+  background: linear-gradient(135deg, #6C63FF, #3ECFCF);
+  border: none;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:where(.easy-career-page) .btn-retry-interview:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(108, 99, 255, 0.45);
+}
+
+:where(.easy-career-page) .btn-back-results {
+  flex: 1;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:where(.easy-career-page) .btn-back-results:hover {
+  background: rgba(255,255,255,0.1);
+  color: #ffffff;
+}
+
+/* ==========================================================
+   PROCESSING / SPINNER
+   ========================================================== */
+:where(.easy-career-page) .dropzone-loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+:where(.easy-career-page) .dropzone-loader h3 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+}
+
+:where(.easy-career-page) .dropzone-loader p {
+  font-size: 0.75rem;
+  color: #64748b;
+  margin: 0;
+}
+
+:where(.easy-career-page) .career-spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid rgba(108, 99, 255, 0.2);
+  border-top-color: #3ECFCF;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* Mobile tweaks for interview */
+@media (max-width: 600px) {
+  :where(.easy-career-page) .interview-card {
+    padding: 22px 16px;
+    gap: 16px;
+  }
+
+  :where(.easy-career-page) .report-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  :where(.easy-career-page) .report-subtitle {
+    max-width: 100%;
+  }
+
+  :where(.easy-career-page) .report-actions {
+    flex-direction: column;
+  }
+}
+
+/* ── Responsive cards on mobile ─────────────────────────────── */
+@media (max-width: 600px) {
+  :where(.easy-career-page) .easy-card,
+  :where(.easy-career-page) .easy-results-card,
+  :where(.easy-career-page) .interview-card {
+    padding: 20px 14px;
+    border-radius: 14px;
+  }
+
+  :where(.easy-career-page) .jd-row-fields {
+    grid-template-columns: 1fr;
+  }
+
+  :where(.easy-career-page) .wizard-steps-bar {
+    max-width: 100%;
+  }
+
+  :where(.easy-career-page) .wizard-step-label {
+    display: none;
+  }
+
+  :where(.easy-career-page) .group-header-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+.career-api-error{position:relative;z-index:2;width:100%;max-width:960px;margin:0 auto 16px;padding:14px 18px;border:1px solid #ef444455;border-radius:12px;background:var(--ui-panel);color:var(--ui-text);font-size:.9rem;line-height:1.6;overflow-wrap:anywhere}

@@ -1,0 +1,127 @@
+/* Keep the compact navigation specific to the mobile drawer. */
+@media(max-width:900px) {
+:root .app-layout .sidebar {height:100dvh;box-sizing:border-box}
+:root .app-layout .sidebar-inner {display:flex;flex-direction:column;gap:clamp(4px,1dvh,10px);padding:10px 12px;min-height:0;flex:1}
+:root .app-layout .sidebar-section {margin:0;flex-shrink:0}
+:root .app-layout .sidebar-section + .sidebar-section {margin:0;padding-top:5px}
+:root .app-layout .sidebar-heading {font-size:9px;line-height:1.3;margin:0 0 3px;padding:0 8px}
+:root .app-layout .sidebar-links {gap:1px}
+:root .app-layout .sidebar-link {min-height:clamp(28px,4.2dvh,38px);padding:4px 8px;font-size:12px;line-height:1.25;gap:9px}
+:root .app-layout .sidebar-link:hover {padding-left:8px}
+  :root .app-layout .sidebar-header-mobile {padding:8px 12px;flex-shrink:0;min-height:44px;box-sizing:border-box}
+  :root .app-layout .sidebar-inner {padding-bottom:max(10px,env(safe-area-inset-bottom))}
+}
+
+/* Let plan cards reach the bottom of the workspace while keeping all controls visible. */
+/* Shared document-converter workspace. */
+:root .app-layout .navbar-theme-btn,:root .app-layout .navbar-sub-btn {min-height:42px;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 13px;border-radius:13px;transition:background .18s,box-shadow .18s}
+:root .app-layout .navbar-theme-btn {background:var(--ui-panel)!important;color:var(--ui-accent)!important;border:1px solid var(--ui-border)!important;box-shadow:none!important}
+:root .app-layout .navbar-theme-btn[data-mode="dark"] {color:#f2ce7e!important}
+:root .app-layout .navbar-sub-btn {background:linear-gradient(125deg,#7d5bd2,#9d75e4)!important;color:#fff!important;border:1px solid #a78bfa40!important;box-shadow:0 3px 10px #8460da20!important}
+:root .app-layout .navbar-theme-btn:hover {background:#a78bfa12!important}
+:root .app-layout .navbar-sub-btn:hover {box-shadow:0 5px 16px #8460da35!important}
+:root .app-layout :is(.theme-btn-icon,.navbar-sub-icon) {display:inline-flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0}
+:root .app-layout :is(.theme-btn-icon,.navbar-sub-icon) svg {display:block}
+@media(max-width:680px){:root .app-layout .navbar-theme-btn,:root .app-layout .navbar-sub-btn {min-width:42px;min-height:44px;padding:10px;border-radius:14px}}
+:root .app-layout .compression-options {display:flex;gap:8px;margin-bottom:10px}
+:root .app-layout .compression-options button {flex:1;min-height:38px;padding:8px 12px;border:1px solid var(--ui-border);border-radius:10px;background:var(--ui-panel);color:var(--ui-muted);font-size:12px;cursor:pointer}
+:root .app-layout .compression-options button[aria-pressed="true"] {border-color:var(--ui-accent);color:var(--ui-accent);background:color-mix(in srgb,var(--ui-accent) 9%,var(--ui-panel))}
+:root .app-layout .compression-hint {font-size:12px;line-height:1.6;color:var(--ui-muted);margin:0 0 12px;overflow-wrap:anywhere}
+:root .app-layout .compression-summary {font-size:18px;font-weight:600;color:var(--ui-accent);margin:0 0 6px}
+:root .app-layout .has-selected-file .converter-card {gap:0}
+:root .app-layout .converter-main-area .file-stats-bar {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:0;margin:16px 0;border:0;background:transparent}
+:root .app-layout .converter-main-area .stat-pill {display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;padding:12px;border:1px solid var(--ui-border);border-radius:12px;background:color-mix(in srgb,var(--ui-accent) 4%,var(--ui-panel));min-width:0;text-align:left}
+:root .app-layout .converter-main-area .stat-label {font-size:10px;line-height:1.4;color:var(--ui-muted)}
+:root .app-layout .converter-main-area .stat-val {font-size:12px;line-height:1.5;font-weight:600;color:var(--ui-text);overflow-wrap:anywhere}
+:root .app-layout .converter-main-area .converter-actions-row {display:flex;margin:0;padding:0;width:100%}
+:root .app-layout .converter-main-area .btn-convert-primary {display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:44px;padding:11px 18px;border:1px solid var(--ui-accent);border-radius:11px;background:var(--ui-accent)!important;color:#fff!important;font-size:13px;font-weight:600;box-shadow:0 4px 14px #7451be18}
+:root .app-layout .converter-main-area .btn-convert-primary span {color:inherit!important;-webkit-text-fill-color:currentColor!important}
+:root .app-layout .converter-main-area .converter-error-box {padding:10px 12px;margin:12px 0;border:1px solid #ef444440;border-radius:10px;color:#c23c55;font-size:12px;line-height:1.5}
+:root .app-layout .converter-main-area .converter-result-card {display:flex;align-items:center;gap:14px;width:100%;max-width:760px;box-sizing:border-box;margin-top:16px;padding:16px 18px;border:1px solid var(--ui-border);border-radius:16px;background:var(--ui-panel)}
+:root .app-layout .converter-result-card .result-info {flex:1;min-width:0}
+:root .app-layout .converter-result-card h3 {font-size:14px;margin:0 0 4px;color:var(--ui-text)}
+:root .app-layout .converter-result-card p {font-size:12px;margin:0;color:var(--ui-muted);overflow-wrap:anywhere}
+:root .app-layout .converter-result-card .btn-download-result {padding:10px 14px;border-radius:10px;background:var(--ui-accent);color:#fff;font-size:12px;white-space:nowrap;text-decoration:none}
+@media(min-width:601px) {
+  :root .app-layout .has-selected-file .converter-main-area .converter-dropzone {display:grid;grid-template-columns:auto minmax(0,1fr) auto;min-height:120px;padding:20px;text-align:left;gap:16px}
+  :root .app-layout .has-selected-file .dropzone-info {text-align:left;min-width:0}
+}
+@media(max-width:600px) {
+  :root .app-layout .converter-main-area .file-stats-bar {grid-template-columns:repeat(2,minmax(0,1fr));margin:12px 0}
+  :root .app-layout .converter-main-area .stat-pill {padding:9px 10px}
+  :root .app-layout .has-selected-file .converter-main-area .converter-dropzone {min-height:150px;padding:16px 12px}
+  :root .app-layout .converter-main-area .converter-result-card {flex-wrap:wrap;padding:14px}
+  :root .app-layout .converter-result-card .btn-download-result {width:100%;text-align:center;box-sizing:border-box}
+}
+:root .app-layout .converter-main-area {padding:28px 24px;gap:0}
+:root .app-layout .converter-main-area > .converter-mode-switcher {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:100%;max-width:660px;padding:6px;gap:5px;border:1px solid var(--ui-border);border-radius:16px;background:color-mix(in srgb,var(--ui-panel) 80%,transparent);box-shadow:0 4px 20px #67468c08;margin:auto 0 26px!important;box-sizing:border-box}
+:root .app-layout .converter-mode-switcher .mode-toggle-btn {display:flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 12px;border:1px solid transparent!important;border-radius:11px;background:transparent;color:var(--ui-muted);font-size:12px;font-weight:600;line-height:1.4;transition:background .18s,color .18s,box-shadow .18s}
+:root .app-layout .converter-mode-switcher .mode-toggle-btn svg {width:17px;height:17px;flex-shrink:0}
+:root .app-layout .converter-mode-switcher .mode-toggle-btn.active {background:var(--ui-panel)!important;color:var(--ui-accent)!important;border-color:var(--ui-border)!important;box-shadow:0 3px 10px #7457a514}
+:root .app-layout .converter-mode-switcher .mode-toggle-btn:hover {background:color-mix(in srgb,var(--ui-accent) 8%,transparent)}
+:root .app-layout .converter-mode-switcher .mode-toggle-btn::after {display:none}
+:root .app-layout .converter-main-area > .converter-header {min-height:0;gap:10px;margin:0 0 26px!important}
+:root .app-layout .converter-header .converter-badge {background:color-mix(in srgb,var(--ui-accent) 8%,var(--ui-panel));border:1px solid var(--ui-border);color:var(--ui-accent);font-size:10px;letter-spacing:.9px;padding:5px 12px;border-radius:20px;box-shadow:none}
+:root .app-layout .converter-header .converter-title {font-size:clamp(26px,2.8vw,36px);line-height:1.2;letter-spacing:-1.2px;color:var(--ui-text)!important;background:none!important;-webkit-text-fill-color:currentColor!important}
+:root .app-layout .converter-header .converter-subtitle {max-width:520px;font-size:13px;line-height:1.7;color:var(--ui-muted)}
+:root .app-layout .converter-main-area > :is(.converter-card,.simple-fsc-card) {max-width:760px;padding:18px;border-radius:22px;background:var(--ui-panel)!important;border:1px solid var(--ui-border)!important;box-shadow:0 16px 48px #5842710b!important;overflow:visible}
+:root .app-layout .converter-main-area > :is(.converter-card,.simple-fsc-card)::before {display:none}
+:root .app-layout .converter-main-area :is(.converter-dropzone,.simple-dropzone) {min-height:230px;padding:28px 24px;gap:12px;border:1.5px dashed color-mix(in srgb,var(--ui-accent) 35%,var(--ui-border))!important;border-radius:16px;background:linear-gradient(140deg,color-mix(in srgb,var(--ui-accent) 4%,var(--ui-panel)),color-mix(in srgb,var(--ui-panel) 96%,#69bfb3))!important;box-sizing:border-box;transition:border-color .2s,background .2s,box-shadow .2s}
+:root .app-layout .converter-main-area :is(.converter-dropzone,.simple-dropzone):hover {border-color:var(--ui-accent)!important;box-shadow:inset 0 0 0 3px color-mix(in srgb,var(--ui-accent) 5%,transparent)}
+:root .app-layout .converter-main-area :is(.dropzone-icon-circle,.dropzone-icon) {display:grid;place-items:center;width:58px;height:58px;margin:0;border-radius:17px;background:color-mix(in srgb,var(--ui-accent) 9%,var(--ui-panel));border:1px solid color-mix(in srgb,var(--ui-accent) 15%,transparent);color:var(--ui-accent);font-size:28px;box-shadow:none}
+:root .app-layout .converter-main-area :is(.dropzone-info,.dropzone-text) h3 {font-size:16px;font-weight:600;color:var(--ui-text);margin:0 0 5px;line-height:1.4;overflow-wrap:anywhere}
+:root .app-layout .converter-main-area :is(.dropzone-info,.dropzone-text) p {font-size:12px;color:var(--ui-muted);line-height:1.5;margin:0}
+:root .app-layout .converter-main-area .btn-browse-file {min-height:38px;padding:8px 20px;border:1px solid var(--ui-accent)!important;border-radius:10px;background:var(--ui-accent)!important;color:#fff!important;font-size:12px;font-weight:600;box-shadow:0 4px 12px #7750c51c}
+@media(max-width:600px) {
+  :root .app-layout .converter-main-area {padding:20px 14px}
+  :root .app-layout .converter-main-area > .converter-mode-switcher {gap:3px;padding:4px;margin-bottom:24px!important}
+  :root .app-layout .converter-mode-switcher .mode-toggle-btn {flex-direction:column;gap:5px;padding:8px 3px;font-size:10px;min-height:58px}
+  :root .app-layout .converter-main-area > :is(.converter-card,.simple-fsc-card) {padding:12px;border-radius:18px}
+  :root .app-layout .converter-main-area :is(.converter-dropzone,.simple-dropzone) {min-height:230px;padding:24px 12px}
+  :root .app-layout .converter-header .converter-subtitle {font-size:12px}
+}
+@media(min-width:901px) {
+  :root .app-layout .aichat-messages-container {padding:24px 28px;align-items:stretch}
+  :root .app-layout .aichat-input-area {width:100%;max-width:none;margin:0;padding:12px 28px 16px;box-sizing:border-box;align-self:stretch}
+  :root .app-layout .aichat-input-area .input-box-wrapper {width:100%;max-width:none;margin:0;box-sizing:border-box;min-height:64px;padding:12px 16px;align-items:center}
+  :root .app-layout .aichat-input-area .chat-textarea {font-size:14px;min-height:36px;line-height:24px}
+  :root .app-layout .ai-msg .message-body {max-width:min(90%,1000px);align-items:flex-start}
+}
+
+:root .app-layout .subscription-page {height:auto;min-height:calc(100dvh - 64px);padding:16px 24px 18px;overflow-x:clip;overflow-y:visible}
+:root .app-layout .subscription-page .sub-header {margin-bottom:16px}
+:root .app-layout .subscription-page .sub-title {font-size:28px}
+:root .app-layout .subscription-page .sub-subtitle {white-space:normal;font-size:12px;line-height:1.45;margin-bottom:10px}
+:root .app-layout .subscription-page .pricing-grid {flex:1 1 auto!important;min-height:0!important;align-items:stretch}
+:root .app-layout .subscription-page .plan-card {height:auto!important;min-height:0!important;padding:38px 22px 24px!important;box-sizing:border-box;min-width:0}
+:root .app-layout .subscription-page .plan-header {margin-bottom:14px}
+:root .app-layout .subscription-page .plan-name {font-size:19px}
+:root .app-layout .subscription-page .plan-desc {font-size:12px;line-height:1.5;margin:10px 0 0;min-height:36px;overflow-wrap:anywhere}
+:root .app-layout .subscription-page .plan-pricing {margin-bottom:18px;padding-bottom:16px}
+:root .app-layout .subscription-page .plan-features {flex:1;gap:12px;margin:8px 0 24px}
+:root .app-layout .subscription-page .feature-item > span:last-child {min-width:0;overflow-wrap:anywhere}
+:root .app-layout .subscription-page .feature-check {flex-shrink:0}
+:root .app-layout .subscription-page .feature-item {font-size:12px!important;line-height:1.45!important}
+:root .app-layout .subscription-page .plan-btn {margin-top:auto;min-height:40px;padding:9px 12px;font-size:12px;flex-shrink:0}
+:root .app-layout .subscription-page > .loading-indicator {position:absolute;top:12px;right:16px;z-index:3}
+:root .app-layout .subscription-page > .subscription-glow-1,
+:root .app-layout .subscription-page > .subscription-glow-2 {display:none}
+@media(max-width:768px) {
+  :root .app-layout .subscription-page {padding:16px 12px 16px}
+  :root .app-layout .subscription-page .sub-title {font-size:23px}
+  :root .app-layout .subscription-page .sub-header {margin-bottom:10px}
+  :root .app-layout .subscription-page .billing-cycle-btn {padding:7px 14px;font-size:12px}
+  :root .app-layout .subscription-page .sub-mobile-tabs {margin-bottom:16px;box-sizing:border-box}
+  :root .app-layout .subscription-page .pricing-grid {width:100%!important;flex:1 1 auto!important;min-height:0!important}
+  :root .app-layout .subscription-page .plan-card.mobile-show {flex:1 1 auto!important;min-height:0!important;width:100%;margin:0}
+  :root .app-layout .subscription-page .plan-card {padding:28px 18px 20px!important;flex-shrink:0}
+  :root .app-layout .subscription-page .plan-desc {min-height:0}
+  :root .app-layout .subscription-page .plan-features {gap:10px;margin:4px 0 20px}
+}
+@media(max-height:740px) {
+  :root .app-layout .subscription-page {padding-top:10px;padding-bottom:12px}
+  :root .app-layout .subscription-page .sub-header {margin-bottom:8px}
+  :root .app-layout .subscription-page .plan-card {padding:26px 18px 20px!important}
+  :root .app-layout .subscription-page .plan-features {gap:9px}
+  :root .app-layout .subscription-page .plan-pricing {margin-bottom:8px;padding-bottom:8px}
+}

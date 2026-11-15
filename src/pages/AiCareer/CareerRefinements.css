@@ -1,0 +1,246 @@
+﻿/* Career workspace: shared colors across every assessment step. */
+:root .easy-career-page {
+  --career-text: #eeeaf7;
+  --career-muted: #b5adc5;
+  --career-panel: #19161f;
+  --career-field: #131017;
+  --career-soft: #a78bfa0e;
+  --career-border: #b59bd52e;
+  --career-accent: #c4a7ff;
+  --career-primary: #6943c7;
+  --career-green: #6ee7b7;
+  --career-amber: #fcd27d;
+  --career-red: #fda4af;
+  padding: 42px 32px 80px;
+  text-align: left;
+  isolation: isolate;
+}
+:root[data-theme="light"] .easy-career-page {
+  --career-text: #2e253d;
+  --career-muted: #655b75;
+  --career-panel: #fdfbff;
+  --career-field: #f6f2fb;
+  --career-soft: #eee6fa;
+  --career-border: #dbd0e9;
+  --career-accent: #6841ab;
+  --career-green: #146548;
+  --career-amber: #82520d;
+  --career-red: #ab3049;
+}
+/* Reset global light-theme text fill so component colors remain authoritative. */
+:root .easy-career-page :is(span,p,label,h1,h2,h3,h4,strong,div,button,input,textarea) {
+  -webkit-text-fill-color: currentColor !important;
+}
+:root .easy-career-page :is(.easy-card,.easy-results-card,.interview-card) {
+  background: var(--career-panel) !important;
+  color: var(--career-text) !important;
+  border: 1px solid var(--career-border) !important;
+  box-shadow: 0 16px 50px #100c1e12;
+  backdrop-filter: none;
+  width: 100%;
+  max-width: 960px;
+  border-radius: 22px;
+  padding: 30px;
+  gap: 26px;
+}
+:root .easy-career-page .converter-header {max-width:960px;align-items:flex-start;text-align:left;margin-bottom:28px;gap:12px}
+:root .easy-career-page .converter-title {background:none!important;color:var(--career-text)!important;font-size:clamp(26px,3vw,38px);letter-spacing:-1.2px}
+:root .easy-career-page .converter-subtitle {color:var(--career-muted)!important;max-width:580px;font-size:14px;line-height:1.8}
+:root .easy-career-page .converter-badge {color:var(--career-accent)!important;background:var(--career-soft)!important;border:1px solid var(--career-border);padding:7px 12px}
+:root .easy-career-page :is(h2,h3,h4,.easy-label,.drop-text h3,.question-body,.iv-question-text,.rq-question,.rq-answer-text,.section-heading,.iv-answer-label,.report-title,.report-section-title) {color:var(--career-text)!important}
+:root .easy-career-page :is(.easy-label,.iv-answer-label) {text-transform:none;letter-spacing:0;font-size:13px;font-weight:600;line-height:1.6}
+:root .easy-career-page :is(.converter-subtitle,.jd-subtitle,.drop-text p,.easy-help-note,.banner-role-tag,.score-text,.jd-summary-text,.step-item,.iv-char-count,.rq-your-label,.report-subtitle,.report-score-label,.cv-loaded-chars,.jd-hint-label,.iv-company-tag,.career-card-intro p) {color:var(--career-muted)!important}
+:root .easy-career-page :is(input,textarea) {background:var(--career-field)!important;border:1px solid var(--career-border)!important;color:var(--career-text)!important;box-shadow:none;font-size:14px;line-height:1.7;border-radius:12px}
+:root .easy-career-page :is(input,textarea)::placeholder {color:var(--career-muted)!important;opacity:.8;-webkit-text-fill-color:currentColor!important;font-size:13px}
+:root .easy-career-page :is(input,textarea):focus {border-color:var(--career-accent)!important;outline:3px solid color-mix(in srgb,var(--career-accent) 15%,transparent);outline-offset:1px}
+:root .easy-career-page :is(button,[role="button"]):focus-visible {outline:2px solid var(--career-accent);outline-offset:3px}
+:root .easy-career-page button {min-height:38px;line-height:1.5;white-space:normal;overflow-wrap:anywhere;letter-spacing:0}
+:root .easy-career-page :is(.btn-easy-analyze,.btn-start-interview,.iv-submit-btn,.btn-retry-interview) {background:linear-gradient(120deg,#6943c7,#7752cc)!important;color:#fff!important;border:1px solid #8867d0!important;box-shadow:0 5px 18px #6943c722;font-weight:600;font-size:14px;min-height:48px;border-radius:12px;padding:12px 20px}
+:root .easy-career-page :is(.btn-easy-analyze,.btn-start-interview,.iv-submit-btn,.btn-retry-interview) span {color:#fff!important}
+:root .easy-career-page :is(.easy-sample-btn,.btn-back-step,.btn-start-over,.btn-skip-jd,.btn-simple-browse,.btn-toggle-tip,.iv-hint-toggle,.btn-back-results,.easy-clear-btn,.iv-exit-btn,.jd-mini-chip,.sugg-chip-btn) {background:var(--career-soft)!important;color:var(--career-accent)!important;border:1px solid var(--career-border)!important;border-radius:9px;font-weight:600;box-shadow:none}
+:root .easy-career-page button:disabled {opacity:.55;cursor:not-allowed;transform:none}
+:root .easy-career-page .career-card-intro {text-align:left}
+:root .easy-career-page .career-eyebrow {font-size:10px;letter-spacing:1.5px;font-weight:700;color:var(--career-accent)!important}
+:root .easy-career-page .career-card-intro h2 {font-size:20px;line-height:1.4;letter-spacing:-.4px;margin:8px 0}
+:root .easy-career-page .career-card-intro p {font-size:13px;line-height:1.8;margin:0}
+:root .easy-career-page .career-optional {font-size:11px;font-weight:400;color:var(--career-muted)!important;margin-left:5px}
+:root .easy-career-page .wizard-steps-bar {max-width:960px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:0 0 24px}
+:root .easy-career-page .wizard-step {min-width:0;padding:12px 16px;gap:10px;background:var(--career-soft)!important;border:1px solid var(--career-border)!important;border-radius:12px}
+:root .easy-career-page .wizard-step-connector {display:none}
+:root .easy-career-page .wizard-step-label {display:block;font-size:12px;color:var(--career-muted)!important;white-space:normal}
+:root .easy-career-page .wizard-step-num {color:var(--career-muted)!important;background:var(--career-field)!important;border-color:var(--career-border)!important}
+:root .easy-career-page .wizard-step.active {border-color:var(--career-accent)!important}
+:root .easy-career-page .wizard-step.active .wizard-step-label {color:var(--career-text)!important}
+:root .easy-career-page .wizard-step.active .wizard-step-num {background:var(--career-primary)!important;color:#fff!important;border-color:var(--career-primary)!important}
+:root .easy-career-page .wizard-step.completed .wizard-step-num {background:var(--career-soft)!important;color:var(--career-green)!important;border-color:var(--career-green)!important}
+:root .easy-career-page :is(.easy-dropzone,.easy-paste-wrap) {background:var(--career-field)!important;border-color:var(--career-border)!important;border-radius:15px;box-shadow:none}
+:root .easy-career-page .easy-dropzone {min-height:215px;padding:28px 20px}
+:root .easy-career-page .drop-icon-circle {background:var(--career-soft)!important;color:var(--career-accent)!important;box-shadow:none}
+:root .easy-career-page .easy-help-note {border-top:1px solid var(--career-border);padding-top:16px;font-size:12px;line-height:1.8}
+:root .easy-career-page .jd-row-fields {grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:22px}
+:root .easy-career-page :is(.jd-field,.jd-header-left,.score-left,.jd-summary-content,.report-summary,.iv-progress-info) {min-width:0}
+:root .easy-career-page .jd-title {font-size:21px;margin:12px 0 8px;line-height:1.4}
+:root .easy-career-page .jd-subtitle {line-height:1.8;font-size:13px}
+:root .easy-career-page :is(.cv-loaded-badge,.jd-summary-banner,.easy-score-banner,.iv-question-section,.next-steps-box,.answer-tip-box,.iv-hint-box) {background:var(--career-soft)!important;border:1px solid var(--career-border)!important;color:var(--career-text)!important;box-shadow:none;border-radius:14px}
+:root .easy-career-page :is(.cv-loaded-text,.cv-loaded-text strong,.jd-summary-title,.jd-at-company,.answer-tip-box strong,.iv-hint-box,.score-val,.banner-company,.question-type-tag,.iv-type-tag,.q-count-badge,.iv-step-badge,.report-company-info,.rq-type,.report-score-num) {color:var(--career-accent)!important}
+:root .easy-career-page :is(.jd-mini-chip,.question-type-tag,.iv-type-tag,.q-count-badge,.rq-type,.iv-company-tag) {background:var(--career-soft)!important;border-color:var(--career-border)!important;white-space:normal;line-height:1.6}
+:root .easy-career-page .jd-title-hint-row {gap:6px;margin-top:10px}
+:root .easy-career-page .jd-mini-chip {font-size:11px;min-height:30px;padding:5px 8px}
+:root .easy-career-page .jd-action-row {display:flex;gap:10px;flex-wrap:wrap}
+:root .easy-career-page .jd-action-row>* {flex:1;min-width:0}
+:root .easy-career-page .easy-score-banner {padding:24px;gap:16px}
+:root .easy-career-page .score-val {font-size:48px;font-weight:700;letter-spacing:-2px;line-height:1.2}
+:root .easy-career-page .score-text {font-size:12px}
+:root .easy-career-page .section-heading {display:flex;align-items:center;flex-wrap:wrap;gap:10px;font-size:16px;line-height:1.6;margin-bottom:16px}
+:root .easy-career-page .skills-dual-row {gap:14px;grid-template-columns:repeat(2,minmax(0,1fr))}
+:root .easy-career-page :is(.skill-box,.simple-question-card,.report-q-item) {background:var(--career-field)!important;border:1px solid var(--career-border)!important;border-radius:14px;padding:20px;min-width:0;box-shadow:none}
+:root .easy-career-page .box-title {font-size:13px;line-height:1.7}
+:root .easy-career-page :is(.box-title.green,.chip.green,.jd-char-count.good,.jd-quality-badge) {color:var(--career-green)!important}
+:root .easy-career-page :is(.box-title.amber,.chip.amber,.jd-char-count.low,.jd-quality-badge.warning) {color:var(--career-amber)!important}
+:root .easy-career-page :is(.box-title.red,.chip.red) {color:var(--career-red)!important}
+:root .easy-career-page .chip {font-size:12px;line-height:1.65;padding:7px 10px;white-space:normal;overflow-wrap:anywhere;max-width:100%;border-radius:8px}
+:root .easy-career-page .chip.green {background:color-mix(in srgb,var(--career-green) 9%,transparent)!important;border-color:color-mix(in srgb,var(--career-green) 25%,transparent)!important}
+:root .easy-career-page .chip.amber {background:color-mix(in srgb,var(--career-amber) 9%,transparent)!important;border-color:color-mix(in srgb,var(--career-amber) 25%,transparent)!important}
+:root .easy-career-page .chip.red {background:color-mix(in srgb,var(--career-red) 9%,transparent)!important;border-color:color-mix(in srgb,var(--career-red) 25%,transparent)!important}
+:root .easy-career-page :is(.question-body,.answer-tip-box,.iv-hint-box,.rq-question,.rq-answer-text,.rq-feedback) {font-size:14px;line-height:1.85;overflow-wrap:anywhere}
+:root .easy-career-page :is(.answer-tip-box,.rq-feedback) {color:var(--career-muted)!important}
+:root .easy-career-page :is(.question-header,.rq-header,.iv-meta-row) {flex-wrap:wrap;gap:10px}
+:root .easy-career-page .next-steps-box {padding:20px}
+:root .easy-career-page .step-num {background:var(--career-primary)!important;color:#fff!important}
+:root .easy-career-page .interview-overlay {padding:24px;background:#100c20b8!important;backdrop-filter:blur(8px);align-items:safe center;overscroll-behavior:contain}
+:root .easy-career-page .interview-card {max-width:720px;max-height:calc(100dvh - 48px);overflow-y:auto;overscroll-behavior:contain;flex-shrink:0;gap:20px;box-shadow:0 24px 100px #0005}
+:root .easy-career-page .iv-question-section {padding:18px;text-align:left}
+:root .easy-career-page .iv-question-text {font-size:17px;font-weight:600;line-height:1.7;margin-bottom:0}
+:root .easy-career-page .iv-answer-textarea {min-height:160px;resize:vertical;padding:14px}
+:root .easy-career-page .iv-progress-bar {background:var(--career-border)}
+:root .easy-career-page .iv-progress-fill {background:var(--career-primary)}
+:root .easy-career-page .report-top {border-color:var(--career-border);flex-wrap:nowrap;align-items:center}
+:root .easy-career-page .report-score-circle {width:88px;height:88px;box-shadow:none}
+:root .easy-career-page .report-score-circle::after {background:var(--career-panel)}
+:root .easy-career-page :is(.report-grade,.rq-score) {color:var(--career-accent)!important;font-weight:700}
+:root .easy-career-page .rq-num {background:var(--career-soft);color:var(--career-muted)!important}
+:root .easy-career-page :is(.rq-answer-preview,.rq-feedback) {background:var(--career-panel)!important;border-color:var(--career-border)!important;border-radius:8px}
+:root .easy-career-page .report-actions {display:flex;gap:10px;flex-wrap:wrap}
+:root .easy-career-page .report-actions>* {flex:1;min-width:0}
+:root .easy-career-page :is(.career-api-error,.processing-text) {color:var(--career-red)!important}
+:root .easy-career-page :is(.skill-box,.jd-summary-content,.cv-loaded-text,.banner-role-tag,.report-company-info,.iv-company-tag) {overflow-wrap:anywhere}
+@media(max-width:900px) {
+  :root .easy-career-page {margin-left:0;width:100%;padding:28px 20px 60px}
+}
+@media(max-width:600px) {
+  :root .easy-career-page {padding:26px 14px 50px}
+  :root .easy-career-page .converter-header {gap:10px;margin-bottom:22px}
+  :root .easy-career-page .converter-title {font-size:27px;letter-spacing:-.8px}
+  :root .easy-career-page .converter-subtitle {font-size:13px}
+  :root .easy-career-page :is(.easy-card,.easy-results-card) {padding:20px 16px;border-radius:18px;gap:22px}
+  :root .easy-career-page .career-card-intro h2 {font-size:19px}
+  :root .easy-career-page .wizard-steps-bar {gap:7px;margin-bottom:18px}
+  :root .easy-career-page .wizard-step {flex-direction:column;align-items:flex-start;padding:10px;gap:7px;border-radius:11px}
+  :root .easy-career-page .wizard-step-label {font-size:11px;line-height:1.4}
+  :root .easy-career-page :is(input,textarea) {font-size:16px}
+  :root .easy-career-page .jd-row-fields {grid-template-columns:minmax(0,1fr);gap:20px}
+  :root .easy-career-page .jd-card-header {flex-direction:column;align-items:flex-start;gap:10px}
+  :root .easy-career-page .group-header-row {flex-wrap:wrap;gap:8px}
+  :root .easy-career-page .input-mode-switcher {width:100%;display:flex}
+  :root .easy-career-page .mode-pill {flex:1;padding:10px 6px;font-size:12px;min-width:0}
+  :root .easy-career-page .easy-dropzone {min-height:220px;padding:24px 14px}
+  :root .easy-career-page .drop-text h3 {font-size:15px;overflow-wrap:anywhere}
+  :root .easy-career-page :is(.jd-action-row,.report-actions) {flex-direction:column}
+  :root .easy-career-page :is(.jd-action-row,.report-actions)>* {flex:auto;width:100%}
+  :root .easy-career-page .skills-dual-row {grid-template-columns:minmax(0,1fr)}
+  :root .easy-career-page .easy-score-banner {padding:18px;align-items:flex-start;gap:14px}
+  :root .easy-career-page .score-left {align-items:flex-start;width:100%}
+  :root .easy-career-page .score-val {font-size:44px}
+  :root .easy-career-page .section-heading {font-size:15px}
+  :root .easy-career-page :is(.skill-box,.simple-question-card,.report-q-item) {padding:16px}
+  :root .easy-career-page .question-header {align-items:flex-start}
+  :root .easy-career-page .question-type-tag {max-width:100%}
+  :root .easy-career-page .interview-overlay {padding:12px}
+  :root .easy-career-page .interview-card {padding:20px 16px;max-height:calc(100dvh - 24px);gap:18px;border-radius:18px}
+  :root .easy-career-page .iv-header {align-items:flex-start;gap:8px}
+  :root .easy-career-page .iv-exit-btn {padding:7px 10px;flex-shrink:0}
+  :root .easy-career-page .iv-question-section {padding:14px}
+  :root .easy-career-page .iv-question-text {font-size:15px}
+  :root .easy-career-page .report-top {flex-direction:row;gap:14px;text-align:left;align-items:center}
+  :root .easy-career-page .report-summary {min-width:0;text-align:left}
+  :root .easy-career-page .report-title {font-size:19px}
+  :root .easy-career-page .report-subtitle {font-size:12px}
+}
+@media(prefers-reduced-motion:reduce) {
+  :root .easy-career-page *, :root .easy-career-page *::before {animation:none!important;transition:none!important}
+}
+:root .easy-career-page .action-steps-list {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+:root .easy-career-page .step-item {display:flex;flex-direction:row;align-items:flex-start;text-align:left;background:var(--career-field)!important;border:1px solid var(--career-border)!important;padding:18px;border-radius:12px;gap:12px;font-size:13px;line-height:1.8;color:var(--career-muted)!important}
+:root .easy-career-page .step-item span:not(.step-num) {font-size:13px;line-height:1.8;color:var(--career-muted)!important}
+:root .easy-career-page .step-item strong {color:var(--career-text)!important}
+:root .easy-career-page .step-num {margin-top:2px;width:24px;height:24px;font-size:12px;line-height:24px}
+:root .easy-career-page .jd-summary-text strong {color:var(--career-accent)!important}
+:root .easy-career-page .section-heading {text-transform:none;letter-spacing:-.2px}
+:root .easy-career-page .career-empty-note {font-size:13px;color:var(--career-muted)!important;line-height:1.8;margin:0}
+@media(max-width:600px) {:root .easy-career-page .action-steps-list {grid-template-columns:minmax(0,1fr)}}
+:root .easy-career-page .custom-role-box {padding:0;background:transparent!important;border:0!important}
+:root .easy-career-page .custom-role-input {padding:13px 42px 13px 14px}
+:root .easy-career-page .jd-textarea-wrap {background:var(--career-field)!important;border:1px solid var(--career-border)!important;border-radius:12px;overflow:hidden}
+:root .easy-career-page .jd-textarea-wrap textarea {border:0!important}
+:root .easy-career-page .jd-char-indicator {background:var(--career-field)!important;border-color:var(--career-border)!important;flex-wrap:wrap;justify-content:flex-start}
+:root .easy-career-page .jd-quality-badge {background:color-mix(in srgb,var(--career-green) 10%,transparent)!important}
+:root .easy-career-page .jd-quality-badge.warning {background:color-mix(in srgb,var(--career-amber) 10%,transparent)!important}
+:root .easy-career-page .easy-help-note span {color:var(--career-muted)!important;font-size:12px;line-height:1.8}
+:root .easy-career-page {isolation:auto}
+:root .easy-career-page .interview-overlay {z-index:1200}
+
+/* Keep the two setup steps within a laptop workspace without clipping controls. */
+:root .easy-career-page.career-setup {padding:18px 24px 20px}
+@media(min-width:901px) {
+  :root .easy-career-page.career-setup {justify-content:center;min-height:calc(100dvh - 64px)}
+}
+:root .career-setup .converter-header {gap:5px;margin-bottom:12px}
+:root .career-setup .converter-badge {display:none}
+:root .career-setup .converter-title {font-size:28px;line-height:1.2;margin:0}
+:root .career-setup .converter-subtitle {font-size:12px;line-height:1.5;margin:0;max-width:none}
+:root .career-setup .wizard-steps-bar {margin-bottom:12px;flex-shrink:0}
+:root .career-setup .wizard-step {padding:7px 12px}
+:root .career-setup .easy-card {padding:16px 22px;gap:10px;flex-shrink:0;border-radius:18px}
+:root .career-setup .career-eyebrow {display:none}
+:root .career-setup .career-card-intro h2 {font-size:18px;margin:3px 0}
+:root .career-setup .career-card-intro p {line-height:1.5;font-size:12px}
+:root .career-setup .easy-input-group {gap:8px}
+:root .career-setup .group-header-row {margin-bottom:0}
+:root .career-setup :is(.custom-role-input,.jd-input) {padding:8px 12px;line-height:1.5}
+:root .career-setup .custom-role-input {padding-right:42px}
+:root .career-setup .easy-dropzone {display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;min-height:130px;padding:18px;gap:16px;text-align:left}
+:root .career-setup .dropzone-loader {grid-column:1 / -1;align-items:center;text-align:center}
+:root .career-setup .drop-icon {font-size:30px}
+:root .career-setup .drop-text h3 {font-size:14px;margin:0 0 4px}
+:root .career-setup .drop-text p {font-size:12px;margin:0}
+:root .career-setup :is(.easy-textarea,.jd-textarea) {height:clamp(90px,17dvh,140px);min-height:90px;resize:none;overflow-y:auto}
+:root .career-setup .easy-help-note {padding-top:8px;margin:0;font-size:11px;line-height:1.5}
+:root .career-setup .easy-help-note span {font-size:11px;line-height:1.5}
+:root .career-setup .jd-header-left {display:grid;grid-template-columns:auto 1fr;align-items:center;gap:6px 14px}
+:root .career-setup .jd-title {font-size:19px;margin:0}
+:root .career-setup .jd-subtitle {grid-column:1 / -1;font-size:12px;line-height:1.5}
+:root .career-setup .btn-back-step {padding:5px 10px;min-height:32px}
+:root .career-setup .cv-loaded-badge {padding:7px 12px}
+:root .career-setup .cv-loaded-text {font-size:12px}
+:root .career-setup .jd-field {gap:5px}
+:root .career-setup .jd-title-hint-row {width:calc(200% + 22px);margin-top:3px;gap:5px}
+:root .career-setup .jd-mini-chip {min-height:26px;padding:3px 7px;font-size:10px}
+:root .career-setup .jd-action-row {flex-direction:row;align-items:stretch}
+:root .career-setup :is(.btn-easy-analyze,.btn-skip-jd) {min-height:40px;padding:8px 12px;font-size:12px}
+:root .career-setup .career-api-error {padding:8px 12px;margin-bottom:10px;font-size:12px;line-height:1.5}
+@media(min-width:701px) and (max-height:740px) {
+  :root .easy-career-page.career-setup {padding-top:12px;padding-bottom:10px}
+  :root .career-setup .converter-badge {display:none}
+  :root .career-setup .easy-card {gap:8px;padding:12px 20px}
+  :root .career-setup .easy-dropzone {min-height:100px;padding:12px}
+  :root .career-setup :is(.easy-textarea,.jd-textarea) {height:74px;min-height:74px}
+}
+@media(max-width:700px) {
+  :root .easy-career-page.career-setup {padding:16px 14px}
+  :root .career-setup .easy-card {padding:16px}
+  :root .career-setup .jd-row-fields {grid-template-columns:1fr;gap:12px}
+  :root .career-setup .jd-title-hint-row {width:100%}
+  :root .career-setup .jd-action-row {flex-direction:column}
+  :root .career-setup .jd-card-header {gap:8px}
+  :root .career-setup .easy-dropzone {display:flex;flex-direction:column;text-align:center;gap:10px}
+}

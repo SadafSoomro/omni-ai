@@ -1,0 +1,311 @@
+/* ==========================================================
+   SIMPLE & CLEAN FILE SIZE CONVERTER CSS
+   ========================================================== */
+
+.converter-container.simple-fsc-page {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  text-align: center !important;
+  padding: 30px 20px 80px !important;
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+  width: calc(100% - var(--sidebar-width, 260px));
+}
+
+@media (max-width: 900px) {
+  .converter-container.simple-fsc-page {
+    margin-left: 0 !important;
+    width: 100% !important;
+    padding: 20px 14px 60px !important;
+  }
+}
+
+:where(.converter-container) .simple-fsc-page .converter-mode-switcher {
+  margin: 0 auto 28px auto !important;
+  align-self: center !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+}
+
+:where(.converter-container) .simple-fsc-page .converter-header {
+  margin: 0 auto 24px auto !important;
+  text-align: center !important;
+  align-items: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  max-width: 680px !important;
+}
+
+/* Centered Clean Card */
+:where(.converter-container) .simple-fsc-card {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto !important;
+  align-self: center !important;
+  background: rgba(14, 18, 30, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(108, 99, 255, 0.45);
+  border-radius: 20px;
+  padding: 28px 26px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 24px 64px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(108, 99, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+:where(.converter-container) .simple-fsc-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #6C63FF, #3ECFCF, transparent);
+}
+
+/* ==========================================================
+   TAB 1: FILE DROPZONE & CONVERSION STYLES
+   ========================================================== */
+:where(.converter-container) .simple-dropzone {
+  border: 2px dashed rgba(108, 99, 255, 0.35);
+  border-radius: 16px;
+  padding: 32px 20px;
+  text-align: center;
+  background: rgba(108, 99, 255, 0.03);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.22s ease;
+}
+
+:where(.converter-container) .simple-dropzone:hover,
+:where(.converter-container) .simple-dropzone.dragging {
+  border-color: #3ECFCF;
+  background: rgba(62, 207, 207, 0.05);
+  transform: translateY(-2px);
+}
+
+:where(.converter-container) .simple-dropzone.has-file {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.04);
+}
+
+:where(.converter-container) .dropzone-icon {
+  font-size: 2.4rem;
+}
+
+:where(.converter-container) .dropzone-text h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  word-break: break-all;
+}
+
+:where(.converter-container) .dropzone-text p {
+  font-size: 0.82rem;
+  color: #8c8ca4;
+  margin: 0;
+}
+
+:where(.converter-container) .btn-browse-file {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1f5f9;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 7px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+:where(.converter-container) .btn-browse-file:hover {
+  background: rgba(108, 99, 255, 0.2);
+  border-color: #6C63FF;
+}
+
+/* Action Wrap & Primary Shrink Button (No Target Options) */
+:where(.converter-container) .shrink-action-wrap {
+  margin-top: 18px;
+  width: 100%;
+}
+
+:where(.converter-container) .btn-shrink-action-primary {
+  width: 100%;
+  background: linear-gradient(135deg, #6C63FF, #3ECFCF);
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 18px rgba(108, 99, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+:where(.converter-container) .btn-shrink-action-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(108, 99, 255, 0.55);
+}
+
+:where(.converter-container) .btn-shrink-action-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Shrink Flow Result Card ("original size ajaye phir shrink document likha hoa hai aur jisme convert hoe hai woh bas") */
+:where(.converter-container) .shrink-flow-card {
+  background: linear-gradient(135deg, rgba(20, 24, 38, 0.95), rgba(15, 18, 28, 0.95));
+  border: 1px solid rgba(108, 99, 255, 0.4);
+  border-radius: 16px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 10px;
+  animation: fadeIn 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:where(.converter-container) .shrink-flow-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+:where(.converter-container) .shrink-flow-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+  flex: 1;
+}
+
+:where(.converter-container) .shrink-flow-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #94a3b8;
+}
+
+:where(.converter-container) .shrink-flow-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+:where(.converter-container) .shrink-flow-val.origin-val {
+  color: #f1f5f9;
+}
+
+:where(.converter-container) .shrink-flow-val.converted-val {
+  color: #34d399;
+  text-shadow: 0 0 12px rgba(52, 211, 153, 0.3);
+}
+
+:where(.converter-container) .shrink-flow-badge-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+:where(.converter-container) .shrink-flow-arrow {
+  color: #a78bfa;
+  font-size: 1rem;
+}
+
+:where(.converter-container) .shrink-document-pill {
+  background: linear-gradient(135deg, #6C63FF, #3ECFCF);
+  color: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: 50px;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 14px rgba(108, 99, 255, 0.4);
+  white-space: nowrap;
+}
+
+:where(.converter-container) .btn-download-file {
+  width: 100%;
+  background: linear-gradient(135deg, #10b981, #06b6d4);
+  border: none;
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 13px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 18px rgba(16, 185, 129, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+:where(.converter-container) .btn-download-file:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(16, 185, 129, 0.55);
+}
+
+/* ==========================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================== */
+@media (max-width: 700px) {
+  :where(.converter-container) .simple-fsc-card {
+    padding: 22px 16px;
+  }
+
+  :where(.converter-container) .btn-shrink-action-primary {
+    width: 100%;
+  }
+
+  :where(.converter-container) .shrink-flow-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  :where(.converter-container) .shrink-flow-arrow {
+    transform: rotate(90deg);
+  }
+}

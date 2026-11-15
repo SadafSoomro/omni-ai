@@ -16,14 +16,14 @@ export function UsageProvider({ children }) {
   const [blocked, setBlocked] = useState(null)
   const closeRef = useRef(null)
   const previousFocus = useRef(null)
-  const pending = useRef(false)
+  const pending = useRef(new Set())
   const activeRoute=useRef({pathname,token})
   activeRoute.current={pathname,token}
   const [checked,setChecked]=useState(null)
   const [refresh,setRefresh]=useState(0)
   const retry=()=>setRefresh(value=>value+1)
   useEffect(()=>{clearToolPermits();setBlocked(null)},[token,pathname])
-  useEffect(()=>{const onAccess=event=>{if(event.detail.feature && event.detail.feature!==featureFor(pathname))return;setBlocked({...event.detail,from:pathname});setChecked({pathname,token,...event.detail,allowed:false})};window.addEventListener('omni-tool-access',onAccess);return()=>window.removeEventListener('omni-tool-access',onAccess)},[pathname,token])
+  useEffect(()=>{const onAccess=event=>{if(!toolPaths.has(pathname) || event.detail.feature!==featureFor(pathname))return;setBlocked({...event.detail,from:pathname});setChecked({pathname,token,...event.detail,allowed:false})};window.addEventListener('omni-tool-access',onAccess);return()=>window.removeEventListener('omni-tool-access',onAccess)},[pathname,token])
   useEffect(()=>{
     if(isLoading || !toolPaths.has(pathname))return
     let cancelled=false
@@ -53,15 +53,16 @@ export function UsageProvider({ children }) {
   }, [blocked])
 
   const consume = async ({server=false}={}) => {
-    if (isLoading || pending.current) return false
-    pending.current=true
+    const operationKey=JSON.stringify([token,featureFor(pathname)])
+    if (isLoading || pending.current.has(operationKey)) return false
+    pending.current.add(operationKey)
     try {
       const feature=featureFor(pathname)
       const result=await requestToolAccess(feature,token,server)
       if(!result.allowed && activeRoute.current.pathname===pathname && activeRoute.current.token===token){setBlocked({...result,from:pathname});setChecked({pathname,token,...result})}
       return Boolean(result.allowed)
     }catch(error){const state={code:'USAGE_UNAVAILABLE',message:error.message,allowed:false};if(activeRoute.current.pathname===pathname && activeRoute.current.token===token){setBlocked({...state,from:pathname});setChecked({pathname,token,...state})}return false}
-    finally{pending.current=false}
+    finally{pending.current.delete(operationKey)}
   }
 
   const restriction=toolPaths.has(pathname)?{checking:isLoading || checked?.pathname!==pathname || checked?.token!==token,blocked:checked?.pathname===pathname && checked?.token===token && !checked.allowed,code:checked?.code,message:checked?.message}:null

@@ -1,6 +1,6 @@
-const CACHE='omni-static-v1';
+const CACHE='omni-static-v2';
 const OFFLINE='/offline.html';
-const SHELL=[OFFLINE,'/favicon.svg','/manifest.webmanifest','/pwa/icon-192.png','/pwa/icon-512.png','/pwa/icon-maskable-512.png'];
+const SHELL=[OFFLINE,'/favicon.svg','/manifest.webmanifest','/pwa/apple-touch-icon.png','/pwa/icon-192.png','/pwa/icon-512.png','/pwa/icon-maskable-512.png'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(SHELL)));});
 self.addEventListener('activate',event=>{event.waitUntil((async()=>{for(const name of await caches.keys())if(name.startsWith('omni-static-')&&name!==CACHE)await caches.delete(name);await self.clients.claim();})());});
 self.addEventListener('message',event=>{if(event.data?.type==='ACTIVATE_UPDATE')self.skipWaiting();});

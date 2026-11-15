@@ -31,6 +31,6 @@ export async function toolFetch(url,options={}){
   const index=permits.findIndex(p=>p.feature===selectedFeature);
   if(index>=0)headers.set('X-Usage-Permit',permits.splice(index,1)[0].permit);
   const response=await fetch(url,{...options,headers,credentials:'include',signal:options.signal || AbortSignal.timeout(60000)});
-  if(!response.ok){const data=await response.clone().json().catch(()=>({}));if(['LOGIN_REQUIRED','SUBSCRIPTION_REQUIRED','ACCOUNT_SUSPENDED'].includes(data.code))reportAccess(data);}
+  if(!response.ok){const data=await response.clone().json().catch(()=>({}));if(['LOGIN_REQUIRED','SUBSCRIPTION_REQUIRED','ACCOUNT_SUSPENDED'].includes(data.code))reportAccess({...data,feature:selectedFeature});}
   return response;
 }

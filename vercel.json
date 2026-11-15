@@ -3,6 +3,10 @@
   "framework": "vite",
   "rewrites": [
     {
+      "source": "/api/:path*",
+      "destination": "https://omni-ai-backend.vercel.app/api/:path*"
+    },
+    {
       "source": "/((?!api(?:/|$)|assets/|ocr/|pwa/|sw\\.js$|manifest\\.webmanifest$|offline\\.html$|favicon\\.svg$|icons\\.svg$).*)",
       "destination": "/index.html"
     }
